@@ -1,0 +1,76 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1782,         66]
+NotebookOptionsPosition[      1222,         48]
+NotebookOutlinePosition[      1612,         64]
+CellTagsIndexPosition[      1569,         61]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Report Project 1", "Title",
+ CellChangeTimes->{{3.902829666427149*^9, 
+  3.9028296768476753`*^9}},ExpressionUUID->"7ddf1f58-e7e1-4746-a097-\
+af4693cf0913"],
+
+Cell["\<\
+Course code: IX1501
+Date: 2023-09-04
+
+Ali Sahibi, sahibi@kth.se
+Samir Alami, samirala@kth.se\
+\>", "Text",
+ CellChangeTimes->{{3.9028297067124987`*^9, 3.9028297538837547`*^9}, {
+  3.9028298037762747`*^9, 
+  3.9028298235554533`*^9}},ExpressionUUID->"0cbc0afc-c316-4ab9-a16b-\
+ad1531f97ce1"],
+
+Cell["\<\
+Code
+\
+\>", "Section",
+ CellChangeTimes->{{3.902829928711133*^9, 
+  3.9028299337559633`*^9}},ExpressionUUID->"814eefe1-616b-4211-97d4-\
+3d5ae14505b0"]
+}, Open  ]]
+},
+WindowSize->{720, 781.5},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"313d726c-39d2-47ff-a50b-49889c1ca9d1"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 161, 3, 98, "Title",ExpressionUUID->"7ddf1f58-e7e1-4746-a097-af4693cf0913"],
+Cell[744, 27, 299, 10, 127, "Text",ExpressionUUID->"0cbc0afc-c316-4ab9-a16b-ad1531f97ce1"],
+Cell[1046, 39, 160, 6, 105, "Section",ExpressionUUID->"814eefe1-616b-4211-97d4-3d5ae14505b0"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
