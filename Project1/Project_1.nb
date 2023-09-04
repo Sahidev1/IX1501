@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12314,        346]
-NotebookOptionsPosition[     10441,        309]
-NotebookOutlinePosition[     10831,        325]
-CellTagsIndexPosition[     10788,        322]
+NotebookDataLength[     23180,        741]
+NotebookOptionsPosition[     21055,        703]
+NotebookOutlinePosition[     21445,        719]
+CellTagsIndexPosition[     21402,        716]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -108,7 +108,8 @@ Cell[BoxData[
   3.902834251460037*^9, 3.902834431750332*^9}, {3.9028344732110643`*^9, 
   3.9028344858275137`*^9}, {3.9028345177925997`*^9, 3.9028345766804867`*^9}, {
   3.9028346246803102`*^9, 3.9028347319367647`*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"e9386847-2169-4312-8656-6daae05459b8"],
+ CellLabel->
+  "In[168]:=",ExpressionUUID->"e9386847-2169-4312-8656-6daae05459b8"],
 
 Cell["The problem statement can be expressed as:", "Text",
  CellChangeTimes->{{3.902835124979265*^9, 
@@ -146,164 +147,557 @@ Cell[TextData[{
    3.902835911014213*^9},ExpressionUUID->"b9b23eaf-96ad-4e47-b824-\
 4479d3ee1d6b"],
 
-Cell[TextData[{
- "We create a function which takes two arbitrary independent ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["X", "i"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "7763606c-fe42-4f19-ad5b-e3c160e7fb12"],
- "  and calculates the convolution sum:"
-}], "Text",
+Cell["\<\
+Below are the probability distribution sets for each platonic solid:\
+\>", "Text",
  CellChangeTimes->{{3.902835919621499*^9, 3.902835947122184*^9}, {
    3.902835997576755*^9, 3.902836006009001*^9}, 3.9028360536249104`*^9, {
-   3.902836297160128*^9, 
-   3.902836311908688*^9}},ExpressionUUID->"a5cb53ff-ca23-40ba-8745-\
+   3.902836297160128*^9, 3.902836311908688*^9}, {3.902850391145453*^9, 
+   3.902850426660295*^9}},ExpressionUUID->"a5cb53ff-ca23-40ba-8745-\
 645580b328b8"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"probs", " ", "=", " ", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"Table", "[", 
-     RowBox[{
-      RowBox[{"#", "[", "k", "]"}], ",", " ", 
-      RowBox[{"{", 
-       RowBox[{"k", ",", "1", ",", "20"}], "}"}]}], "]"}], "&"}], " ", "/@", 
-   " ", 
-   RowBox[{"{", 
-    RowBox[{
-     SubscriptBox["P", "4"], ",", 
-     SubscriptBox["P", "6"], ",", " ", 
-     SubscriptBox["P", "8"], ",", 
-     SubscriptBox["P", "12"], ",", " ", 
-     SubscriptBox["P", "20"]}], "}"}]}]}]], "Input",
- CellChangeTimes->{{3.902838369693652*^9, 3.902838383669795*^9}, {
-  3.9028384493202477`*^9, 3.9028385066194067`*^9}, {3.9028385583668137`*^9, 
-  3.902838564309705*^9}, {3.902838646005678*^9, 3.9028388312602577`*^9}},
- CellLabel->"In[26]:=",ExpressionUUID->"17e5d6e5-8cd5-4775-a409-9f256adcba16"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{
-     FractionBox["1", "4"], ",", 
-     FractionBox["1", "4"], ",", 
-     FractionBox["1", "4"], ",", 
-     FractionBox["1", "4"], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-     ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-     ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     FractionBox["1", "6"], ",", 
-     FractionBox["1", "6"], ",", 
-     FractionBox["1", "6"], ",", 
-     FractionBox["1", "6"], ",", 
-     FractionBox["1", "6"], ",", 
-     FractionBox["1", "6"], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-     ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-     ",", "0", ",", "0"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", 
-     FractionBox["1", "8"], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", 
-     ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0", ",", "0"}], 
-    "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", 
-     FractionBox["1", "12"], ",", "0", ",", "0", ",", "0", ",", "0", ",", "0",
-      ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"], ",", 
-     FractionBox["1", "20"]}], "}"}]}], "}"}]], "Output",
- CellChangeTimes->{
-  3.9028381369794493`*^9, 3.902838169158764*^9, 3.902838228913343*^9, {
-   3.9028388037858343`*^9, 3.902838832055254*^9}},
- CellLabel->"Out[26]=",ExpressionUUID->"fa2eb005-582e-4647-a4c2-43bdbbcc7b6d"]
-}, Open  ]],
-
-Cell["\<\
-The probability of different K in the table is P(k) = value at index k.\
-\>", "Text",
- CellChangeTimes->{{3.9028404861718197`*^9, 
-  3.902840515458968*^9}},ExpressionUUID->"6c0e86bd-d577-4345-aa98-\
-f840bd6822c5"],
-
-Cell[CellGroupData[{
-
-Cell[BoxData[
- RowBox[{"probs", "[", 
-  RowBox[{"[", "0", "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.902838991722268*^9, 3.902839014492831*^9}},
- CellLabel->"In[29]:=",ExpressionUUID->"b9f72915-9cab-4755-9a0b-b71202eb7161"],
-
-Cell[BoxData["List"], "Output",
- CellChangeTimes->{{3.9028389949826527`*^9, 3.9028390149570427`*^9}},
- CellLabel->"Out[29]=",ExpressionUUID->"8a112525-1277-4dc5-83e7-7954dba8f95d"]
-}, Open  ]],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"ConvSum", "[", 
-   RowBox[{"sum_", ",", "Xprobs_", ",", "Yprobs_"}], "]"}], ":=", " ", 
-  RowBox[{"ListConvolve", "[", 
+  RowBox[{"probs", " ", "=", " ", 
    RowBox[{
-    RowBox[{"Xprobs", "[", 
-     RowBox[{"[", 
-      RowBox[{"0", ";;", "sum"}], "]"}], "]"}], ",", 
-    RowBox[{"Yprobs", "[", 
-     RowBox[{"[", 
-      RowBox[{"0", ";;", "sum"}], "]"}], "]"}]}], "]"}]}]], "Input",
- CellChangeTimes->{{3.90283611477948*^9, 3.902836116241263*^9}, {
-   3.902836156292143*^9, 3.9028361745130997`*^9}, {3.90283632766882*^9, 
-   3.902836430763864*^9}, {3.902836694519973*^9, 3.90283684470478*^9}, {
-   3.902836925479895*^9, 3.902836987812706*^9}, {3.9028388814884777`*^9, 
-   3.90283898938422*^9}, {3.902839019571747*^9, 3.902839025477309*^9}, {
-   3.9028392878109293`*^9, 3.902839422804366*^9}, {3.902839891115555*^9, 
-   3.90283995892696*^9}, {3.902840011805572*^9, 3.902840014729789*^9}, 
-   3.90284032899691*^9, {3.90284054701996*^9, 3.9028405483782578`*^9}, {
-   3.902840584425333*^9, 
-   3.9028406257125187`*^9}},ExpressionUUID->"c32edaf2-87fa-49b3-bc99-\
-911d0f2783a0"]
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"#", "[", "k", "]"}], ",", " ", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "1", ",", "50"}], "}"}]}], "]"}], "&"}], " ", "/@", 
+    " ", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["P", "4"], ",", 
+      SubscriptBox["P", "6"], ",", " ", 
+      SubscriptBox["P", "8"], ",", 
+      SubscriptBox["P", "12"], ",", " ", 
+      SubscriptBox["P", "20"]}], "}"}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.902838369693652*^9, 3.902838383669795*^9}, {
+   3.9028384493202477`*^9, 3.9028385066194067`*^9}, {3.9028385583668137`*^9, 
+   3.902838564309705*^9}, {3.902838646005678*^9, 3.9028388312602577`*^9}, {
+   3.902846182414983*^9, 3.90284619044457*^9}, {3.902847012776657*^9, 
+   3.902847013246942*^9}, {3.902847049427384*^9, 3.902847059189435*^9}, {
+   3.9028472539222507`*^9, 3.9028472542034187`*^9}, {3.902847419848686*^9, 
+   3.902847423844425*^9}, {3.902847923250361*^9, 3.902847923344151*^9}, 
+   3.902848398885282*^9},
+ CellLabel->
+  "In[169]:=",ExpressionUUID->"17e5d6e5-8cd5-4775-a409-9f256adcba16"],
+
+Cell["The convolution sum S=s  for two random variables.", "Text",
+ CellChangeTimes->{{3.9028404861718197`*^9, 3.902840515458968*^9}, {
+  3.902850139241315*^9, 3.9028501827067127`*^9}, {3.9028502294471817`*^9, 
+  3.9028502380132236`*^9}},ExpressionUUID->"6c0e86bd-d577-4345-aa98-\
+f840bd6822c5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"conSum", "[", 
+    RowBox[{"s_", ",", "Xprobs_", ",", "Yprobs_"}], "]"}], ":=", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"s", "-", "i"}], ">=", "1"}], ",", 
+       RowBox[{
+        RowBox[{"Xprobs", "[", 
+         RowBox[{"[", 
+          RowBox[{"s", "-", "i"}], "]"}], "]"}], "*", 
+        RowBox[{"Yprobs", "[", 
+         RowBox[{"[", "i", "]"}], "]"}]}], ",", "0"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "s"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.902843463780867*^9, 3.902843528875647*^9}, {
+  3.902843563493408*^9, 3.902843632515519*^9}, {3.902843705730678*^9, 
+  3.902843740682111*^9}, {3.902846791883677*^9, 3.902846831351595*^9}, {
+  3.902846918414392*^9, 3.902846925176815*^9}, {3.902847128482986*^9, 
+  3.9028472157653008`*^9}, {3.902847275570538*^9, 3.902847279665786*^9}, {
+  3.9028474392292957`*^9, 3.902847439414256*^9}, {3.902847476172604*^9, 
+  3.902847476681899*^9}, {3.902847509558964*^9, 3.902847524668371*^9}, {
+  3.902847966848085*^9, 3.902848002890985*^9}, {3.9028483046777573`*^9, 
+  3.902848308923212*^9}},
+ CellLabel->
+  "In[170]:=",ExpressionUUID->"c2445b80-3071-41e3-82e4-a2242aa6f322"],
+
+Cell["The convolution sum distribution of two random variables.", "Text",
+ CellChangeTimes->{{3.902850212948483*^9, 
+  3.902850323601797*^9}},ExpressionUUID->"b54b8de9-edc7-4fc0-9483-\
+1f957f16bf85"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"ConvDistr", "[", 
+    RowBox[{"Xprobs_", ",", "Yprobs_"}], "]"}], ":=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"conSum", "[", 
+      RowBox[{"i", ",", " ", "Xprobs", ",", " ", "Yprobs"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "50"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.90284203512575*^9, 3.902842039763989*^9}, {
+  3.902842171633477*^9, 3.902842281170588*^9}, {3.902842311350493*^9, 
+  3.902842314828673*^9}, {3.90284237415563*^9, 3.902842404281581*^9}, {
+  3.902842500346854*^9, 3.902842509943858*^9}, {3.9028425667648487`*^9, 
+  3.902842592094631*^9}, {3.902842653405705*^9, 3.9028427409420424`*^9}, {
+  3.902842782855014*^9, 3.90284279011557*^9}, {3.902846292916977*^9, 
+  3.902846294366089*^9}, {3.9028463424701233`*^9, 3.9028463456335373`*^9}, {
+  3.90284758170402*^9, 3.90284759736654*^9}, {3.902847756487134*^9, 
+  3.902847770993495*^9}},
+ CellLabel->
+  "In[171]:=",ExpressionUUID->"86fdc645-255e-44a3-818e-2d808016a81e"],
+
+Cell["\<\
+The convolution sum distribution of throwing 5 platonic dice:\
+\>", "Text",
+ CellChangeTimes->{{3.902850327329157*^9, 
+  3.9028503729714327`*^9}},ExpressionUUID->"e12b3754-dd7d-404c-a0b3-\
+a0aa6303c102"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Cdist", " ", "=", 
+   RowBox[{"ConvDistr", "[", 
+    RowBox[{
+     RowBox[{"ConvDistr", "[", 
+      RowBox[{
+       RowBox[{"ConvDistr", "[", 
+        RowBox[{
+         RowBox[{"ConvDistr", "[", 
+          RowBox[{
+           RowBox[{"probs", "[", 
+            RowBox[{"[", "1", "]"}], "]"}], ",", 
+           RowBox[{"probs", "[", 
+            RowBox[{"[", "2", "]"}], "]"}]}], "]"}], ",", 
+         RowBox[{"probs", "[", 
+          RowBox[{"[", "3", "]"}], "]"}]}], "]"}], ",", 
+       RowBox[{"probs", "[", 
+        RowBox[{"[", "4", "]"}], "]"}]}], "]"}], ",", 
+     RowBox[{"probs", "[", 
+      RowBox[{"[", "5", "]"}], "]"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.902842746994713*^9, 3.90284276447427*^9}, {
+  3.9028463621390142`*^9, 3.9028463817117987`*^9}, {3.902846630089925*^9, 
+  3.9028467143945723`*^9}, {3.902848502247818*^9, 3.902848503111948*^9}, {
+  3.902850512835916*^9, 3.902850520683866*^9}, {3.902850590603559*^9, 
+  3.902850594740919*^9}},
+ CellLabel->
+  "In[176]:=",ExpressionUUID->"3027e21f-2398-494f-bf70-ebc1fe8b1336"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Prepend", "[", 
+    RowBox[{
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"PercentForm", "[", 
+          RowBox[{"N", "[", 
+           RowBox[{"Cdist", "[", 
+            RowBox[{"[", "i", "]"}], "]"}], "]"}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", "5", ",", "50"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\"\<s\>\"", ",", "\"\<P(S=s)\>\""}], "}"}]}], "]"}], ",", 
+   RowBox[{"Frame", "->", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.902850678326689*^9, 3.902850704543233*^9}, {
+  3.9028507417113953`*^9, 3.902850768213669*^9}, {3.902850802003584*^9, 
+  3.9028508201764317`*^9}, {3.902850874402989*^9, 3.902850875872479*^9}, {
+  3.902851101659954*^9, 3.902851188804554*^9}, {3.902851237773136*^9, 
+  3.902851266342605*^9}, {3.9028513167145653`*^9, 3.902851362662538*^9}, {
+  3.9028514807077312`*^9, 3.9028514808371553`*^9}},
+ CellLabel->
+  "In[187]:=",ExpressionUUID->"0921f2b3-bc5f-4a39-9d44-ac58e0b028cc"],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"s\"\>", "\<\"P(S=s)\"\>"},
+    {"5", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.00217%\"\>",
+        ShowStringCharacters->False],
+       0.00002170138888888889,
+       AutoDelete->True],
+      PercentForm]},
+    {"6", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.01085%\"\>",
+        ShowStringCharacters->False],
+       0.00010850694444444444`,
+       AutoDelete->True],
+      PercentForm]},
+    {"7", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.03255%\"\>",
+        ShowStringCharacters->False],
+       0.0003255208333333333,
+       AutoDelete->True],
+      PercentForm]},
+    {"8", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.07595%\"\>",
+        ShowStringCharacters->False],
+       0.0007595486111111111,
+       AutoDelete->True],
+      PercentForm]},
+    {"9", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.1497%\"\>",
+        ShowStringCharacters->False],
+       0.0014973958333333334`,
+       AutoDelete->True],
+      PercentForm]},
+    {"10", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.2626%\"\>",
+        ShowStringCharacters->False],
+       0.0026258680555555558`,
+       AutoDelete->True],
+      PercentForm]},
+    {"11", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.421%\"\>",
+        ShowStringCharacters->False],
+       0.004210069444444444,
+       AutoDelete->True],
+      PercentForm]},
+    {"12", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.6293%\"\>",
+        ShowStringCharacters->False],
+       0.006293402777777778,
+       AutoDelete->True],
+      PercentForm]},
+    {"13", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.8876%\"\>",
+        ShowStringCharacters->False],
+       0.008875868055555555,
+       AutoDelete->True],
+      PercentForm]},
+    {"14", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.191%\"\>",
+        ShowStringCharacters->False],
+       0.0119140625,
+       AutoDelete->True],
+      PercentForm]},
+    {"15", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.534%\"\>",
+        ShowStringCharacters->False],
+       0.015342881944444444`,
+       AutoDelete->True],
+      PercentForm]},
+    {"16", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.908%\"\>",
+        ShowStringCharacters->False],
+       0.019075520833333335`,
+       AutoDelete->True],
+      PercentForm]},
+    {"17", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"2.3%\"\>",
+        ShowStringCharacters->False],
+       0.023003472222222224`,
+       AutoDelete->True],
+      PercentForm]},
+    {"18", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"2.7%\"\>",
+        ShowStringCharacters->False],
+       0.02699652777777778,
+       AutoDelete->True],
+      PercentForm]},
+    {"19", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.092%\"\>",
+        ShowStringCharacters->False],
+       0.030924479166666668`,
+       AutoDelete->True],
+      PercentForm]},
+    {"20", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.466%\"\>",
+        ShowStringCharacters->False],
+       0.034657118055555554`,
+       AutoDelete->True],
+      PercentForm]},
+    {"21", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.809%\"\>",
+        ShowStringCharacters->False],
+       0.0380859375,
+       AutoDelete->True],
+      PercentForm]},
+    {"22", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.112%\"\>",
+        ShowStringCharacters->False],
+       0.04112413194444445,
+       AutoDelete->True],
+      PercentForm]},
+    {"23", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.371%\"\>",
+        ShowStringCharacters->False],
+       0.04370659722222222,
+       AutoDelete->True],
+      PercentForm]},
+    {"24", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.579%\"\>",
+        ShowStringCharacters->False],
+       0.04578993055555555,
+       AutoDelete->True],
+      PercentForm]},
+    {"25", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.735%\"\>",
+        ShowStringCharacters->False],
+       0.047352430555555554`,
+       AutoDelete->True],
+      PercentForm]},
+    {"26", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.839%\"\>",
+        ShowStringCharacters->False],
+       0.048394097222222224`,
+       AutoDelete->True],
+      PercentForm]},
+    {"27", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.891%\"\>",
+        ShowStringCharacters->False],
+       0.048914930555555555`,
+       AutoDelete->True],
+      PercentForm]},
+    {"28", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.891%\"\>",
+        ShowStringCharacters->False],
+       0.048914930555555555`,
+       AutoDelete->True],
+      PercentForm]},
+    {"29", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.839%\"\>",
+        ShowStringCharacters->False],
+       0.048394097222222224`,
+       AutoDelete->True],
+      PercentForm]},
+    {"30", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.735%\"\>",
+        ShowStringCharacters->False],
+       0.047352430555555554`,
+       AutoDelete->True],
+      PercentForm]},
+    {"31", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.579%\"\>",
+        ShowStringCharacters->False],
+       0.04578993055555555,
+       AutoDelete->True],
+      PercentForm]},
+    {"32", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.371%\"\>",
+        ShowStringCharacters->False],
+       0.04370659722222222,
+       AutoDelete->True],
+      PercentForm]},
+    {"33", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"4.112%\"\>",
+        ShowStringCharacters->False],
+       0.04112413194444445,
+       AutoDelete->True],
+      PercentForm]},
+    {"34", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.809%\"\>",
+        ShowStringCharacters->False],
+       0.0380859375,
+       AutoDelete->True],
+      PercentForm]},
+    {"35", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.466%\"\>",
+        ShowStringCharacters->False],
+       0.034657118055555554`,
+       AutoDelete->True],
+      PercentForm]},
+    {"36", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"3.092%\"\>",
+        ShowStringCharacters->False],
+       0.030924479166666668`,
+       AutoDelete->True],
+      PercentForm]},
+    {"37", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"2.7%\"\>",
+        ShowStringCharacters->False],
+       0.02699652777777778,
+       AutoDelete->True],
+      PercentForm]},
+    {"38", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"2.3%\"\>",
+        ShowStringCharacters->False],
+       0.023003472222222224`,
+       AutoDelete->True],
+      PercentForm]},
+    {"39", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.908%\"\>",
+        ShowStringCharacters->False],
+       0.019075520833333335`,
+       AutoDelete->True],
+      PercentForm]},
+    {"40", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.534%\"\>",
+        ShowStringCharacters->False],
+       0.015342881944444444`,
+       AutoDelete->True],
+      PercentForm]},
+    {"41", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"1.191%\"\>",
+        ShowStringCharacters->False],
+       0.0119140625,
+       AutoDelete->True],
+      PercentForm]},
+    {"42", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.8876%\"\>",
+        ShowStringCharacters->False],
+       0.008875868055555555,
+       AutoDelete->True],
+      PercentForm]},
+    {"43", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.6293%\"\>",
+        ShowStringCharacters->False],
+       0.006293402777777778,
+       AutoDelete->True],
+      PercentForm]},
+    {"44", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.421%\"\>",
+        ShowStringCharacters->False],
+       0.004210069444444444,
+       AutoDelete->True],
+      PercentForm]},
+    {"45", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.2626%\"\>",
+        ShowStringCharacters->False],
+       0.0026258680555555558`,
+       AutoDelete->True],
+      PercentForm]},
+    {"46", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.1497%\"\>",
+        ShowStringCharacters->False],
+       0.0014973958333333334`,
+       AutoDelete->True],
+      PercentForm]},
+    {"47", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.07595%\"\>",
+        ShowStringCharacters->False],
+       0.0007595486111111111,
+       AutoDelete->True],
+      PercentForm]},
+    {"48", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.03255%\"\>",
+        ShowStringCharacters->False],
+       0.0003255208333333333,
+       AutoDelete->True],
+      PercentForm]},
+    {"49", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.01085%\"\>",
+        ShowStringCharacters->False],
+       0.00010850694444444444`,
+       AutoDelete->True],
+      PercentForm]},
+    {"50", 
+     TagBox[
+      InterpretationBox[
+       StyleBox["\<\"0.00217%\"\>",
+        ShowStringCharacters->False],
+       0.00002170138888888889,
+       AutoDelete->True],
+      PercentForm]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{
+  3.902851138830659*^9, 3.9028511908189983`*^9, {3.902851255593401*^9, 
+   3.9028512680571203`*^9}, 3.9028513229716883`*^9, {3.902851353980014*^9, 
+   3.9028513638844957`*^9}, 3.902851483366261*^9},
+ CellLabel->
+  "Out[187]=",ExpressionUUID->"b90e3006-ae66-4886-b59e-6df922516cd5"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
@@ -311,7 +705,7 @@ WindowSize->{717, 781.5},
 WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 FrontEndVersion->"13.3 for Linux x86 (64-bit) (July 24, 2023)",
 StyleDefinitions->"Default.nb",
-ExpressionUUID->"313d726c-39d2-47ff-a50b-49889c1ca9d1"
+ExpressionUUID->"dd059ec1-cada-4951-a98c-4cf3f4ca3f7b"
 ]
 (* End of Notebook Content *)
 
@@ -331,21 +725,22 @@ Cell[CellGroupData[{
 Cell[1068, 41, 202, 4, 67, "Section",ExpressionUUID->"814eefe1-616b-4211-97d4-3d5ae14505b0"],
 Cell[1273, 47, 152, 3, 35, "Text",ExpressionUUID->"04ab1226-49a5-4ed5-86bf-4d3bbd82fc54"],
 Cell[1428, 52, 223, 5, 35, "Text",ExpressionUUID->"31d05b85-5b2d-478a-b467-61007255cd65"],
-Cell[1654, 59, 1770, 51, 121, "Input",ExpressionUUID->"e9386847-2169-4312-8656-6daae05459b8"],
-Cell[3427, 112, 186, 3, 35, "Text",ExpressionUUID->"c27fbec0-6f6c-4ec9-a0d7-b246d5008fba"],
-Cell[3616, 117, 370, 11, 33, "Output",ExpressionUUID->"de9f1d19-a3ee-4f8d-8e3d-7aa783f379d4"],
-Cell[3989, 130, 549, 16, 38, "Text",ExpressionUUID->"b9b23eaf-96ad-4e47-b824-4479d3ee1d6b"],
-Cell[4541, 148, 545, 13, 58, "Text",ExpressionUUID->"a5cb53ff-ca23-40ba-8745-645580b328b8"],
+Cell[1654, 59, 1774, 52, 121, "Input",ExpressionUUID->"e9386847-2169-4312-8656-6daae05459b8"],
+Cell[3431, 113, 186, 3, 35, "Text",ExpressionUUID->"c27fbec0-6f6c-4ec9-a0d7-b246d5008fba"],
+Cell[3620, 118, 370, 11, 33, "Output",ExpressionUUID->"de9f1d19-a3ee-4f8d-8e3d-7aa783f379d4"],
+Cell[3993, 131, 549, 16, 38, "Text",ExpressionUUID->"b9b23eaf-96ad-4e47-b824-4479d3ee1d6b"],
+Cell[4545, 149, 389, 7, 35, "Text",ExpressionUUID->"a5cb53ff-ca23-40ba-8745-645580b328b8"],
+Cell[4937, 158, 1156, 27, 31, "Input",ExpressionUUID->"17e5d6e5-8cd5-4775-a409-9f256adcba16"],
+Cell[6096, 187, 295, 4, 35, "Text",ExpressionUUID->"6c0e86bd-d577-4345-aa98-f840bd6822c5"],
+Cell[6394, 193, 1278, 29, 50, "Input",ExpressionUUID->"c2445b80-3071-41e3-82e4-a2242aa6f322"],
+Cell[7675, 224, 199, 3, 35, "Text",ExpressionUUID->"b54b8de9-edc7-4fc0-9483-1f957f16bf85"],
+Cell[7877, 229, 1044, 21, 31, "Input",ExpressionUUID->"86fdc645-255e-44a3-818e-2d808016a81e"],
+Cell[8924, 252, 213, 5, 35, "Text",ExpressionUUID->"e12b3754-dd7d-404c-a0b3-a0aa6303c102"],
+Cell[9140, 259, 1090, 27, 50, "Input",ExpressionUUID->"3027e21f-2398-494f-bf70-ebc1fe8b1336"],
 Cell[CellGroupData[{
-Cell[5111, 165, 796, 20, 31, "Input",ExpressionUUID->"17e5d6e5-8cd5-4775-a409-9f256adcba16"],
-Cell[5910, 187, 2743, 73, 274, "Output",ExpressionUUID->"fa2eb005-582e-4647-a4c2-43bdbbcc7b6d"]
-}, Open  ]],
-Cell[8668, 263, 223, 5, 35, "Text",ExpressionUUID->"6c0e86bd-d577-4345-aa98-f840bd6822c5"],
-Cell[CellGroupData[{
-Cell[8916, 272, 226, 4, 29, "Input",ExpressionUUID->"b9f72915-9cab-4755-9a0b-b71202eb7161"],
-Cell[9145, 278, 180, 2, 33, "Output",ExpressionUUID->"8a112525-1277-4dc5-83e7-7954dba8f95d"]
-}, Open  ]],
-Cell[9340, 283, 1073, 22, 50, "Input",ExpressionUUID->"c32edaf2-87fa-49b3-bc99-911d0f2783a0"]
+Cell[10255, 290, 1083, 25, 50, "Input",ExpressionUUID->"0921f2b3-bc5f-4a39-9d44-ac58e0b028cc"],
+Cell[11341, 317, 9674, 381, 863, "Output",ExpressionUUID->"b90e3006-ae66-4886-b59e-6df922516cd5"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
