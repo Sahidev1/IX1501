@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    190163,       4269]
-NotebookOptionsPosition[    173612,       3936]
-NotebookOutlinePosition[    181262,       4134]
-CellTagsIndexPosition[    181219,       4131]
+NotebookDataLength[    226353,       5135]
+NotebookOptionsPosition[    208886,       4786]
+NotebookOutlinePosition[    216536,       4984]
+CellTagsIndexPosition[    216493,       4981]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -61,10 +61,6 @@ Cell["Summary", "Section",
  CellChangeTimes->{{3.902823456362741*^9, 3.902823477392057*^9}, 
    3.9028235449203663`*^9},ExpressionUUID->"28ab532a-4f99-4328-b494-\
 a8a51a0e3e70"],
-
-Cell[CellGroupData[{
-
-Cell["Task", "Subsection",ExpressionUUID->"4df8543c-22f8-401d-8973-c66d5fa62864"],
 
 Cell[TextData[{
  Cell[BoxData[
@@ -536,43 +532,342 @@ JsUFZV8JLhbUx/81P81jsOz/sP/AHPeoj/ybeI6A3Y1qn3oLH/4W/5Rq9FP/
 Dz75oss=\
 \>", "ImageResolution" -> 96.],ExpressionUUID->
   "4f461b3e-c07d-42b5-a16d-95d2c3f63aa9"],
- "\nAt a dice game you throw five dice in the form of the Platonic Solids. \
-The dice are numbered with integers ",
+ "\nIn this project we analyzed the possible sum probabilities when playing a \
+dice game where one throws 5 platonic dice and sums together that number on \
+each dice. To this we used a convolution sum and created a probability \
+distribution table. \n\nWe analyzed the probability of the win condition ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"1", ",", "2", ",", "\[Ellipsis]", ",", "n"}], TraditionalForm]],
-  ExpressionUUID->"70d14978-4954-4d56-9cff-46a5cc2285ff"],
- " where ",
+   RowBox[{"P", "(", 
+    RowBox[{"S", "<=", " ", 
+     RowBox[{"10", " ", "or", " ", "S"}], ">=", "45"}], ")"}], 
+   TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "bccb07be-5745-4ca9-afc2-3a780789ae73"],
+ ", where S is the sum of the 5 dice. We evaluated it mathematically to be ",
  Cell[BoxData[
-  FormBox["n", TraditionalForm]],ExpressionUUID->
-  "b671e1cd-6a87-41d2-a7f2-a6c43f99a6dd"],
- " is the number of sides. The tetrahedron has its result number (1-4) \
-written at the vertex pointing up. All other bodies have the result number on \
-the side facing up. You win the game if the sum of the numbers S satisfies S\
-\[LessEqual]10 or S\[GreaterEqual]45. Note that S is an integer value ranging \
-between 5 and 50.\n\nYour task is as follows:\n\nBy means of the discrete \
-convolution method,\nTask 1: Determine the probability function of S. Express \
-it as a form of a table.\nTask 2: Determine the probability of winning the \
-game.\n\nBy means of the Monte Carlo simulation,\nTask 3: Obtain the \
-probability of winning the game with 1000 trials.\nTask 4: Discuss how the \
-probability changes when the number of trials changes from a small number \
-(e.g., 10) to a large number (e.g., 100000). Provide a figure with the \
-discussion.\nTask 5: How many trials are needed to keep the relative error \
-between the exact value and the simulation result less than 10%? Provide your \
-reasoning."
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "win"], "=", 
+    RowBox[{
+     FractionBox["41", "3840"], "=", "1.068"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "555bb24d-a095-46fa-964d-61c30b560f05"],
+ "%. We also used a Monte Carlo simulation to approximate the probability \
+with 1000 throws, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "win"], "=", "1.1"}], TraditionalForm]],
+  InitializationCell->True,
+  FormatType->TraditionalForm,ExpressionUUID->
+  "dfabe618-f6af-466c-bbf3-b66d2c5fa674"],
+ "%. Then we tried the Monte Carlo simulation for different number of trials \
+and the conclusion of that is that the probability approximation gets more \
+accurate as the number of trials increases. \n\nWe also tried to find the \
+number of trials required so that the relative error between the simulated \
+probability and real probability was less then 10%. We came to the conclusion \
+that with 46080 trials, the number of possible outcomes in the dice game, we \
+will with high probability get a relative error below 10%."
 }], "Text",
  CellChangeTimes->{{3.776955357179617*^9, 3.7769553573546214`*^9}, {
    3.7769553888670597`*^9, 3.776955444699712*^9}, {3.77695548927977*^9, 
    3.7769555782442827`*^9}, {3.776955623203742*^9, 3.776955678843993*^9}, {
    3.902822777999666*^9, 3.902822793100225*^9}, {3.902822846622211*^9, 
    3.90282289089638*^9}, {3.902823052447826*^9, 3.902823265657248*^9}, 
-   3.902978874312297*^9},ExpressionUUID->"8ad5d4da-afa2-434b-a402-\
+   3.902978874312297*^9, {3.9031652032252703`*^9, 3.903165451601976*^9}, {
+   3.903165489941615*^9, 3.903165658415123*^9}, {3.903165694099676*^9, 
+   3.9031657075845137`*^9}, {3.90316574587481*^9, 
+   3.903166138531659*^9}},ExpressionUUID->"8ad5d4da-afa2-434b-a402-\
 a9f9b705fa59"]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["Result", "Subsection",ExpressionUUID->"39a0ef6c-6a2c-4081-9062-84513a76c571"],
+Cell["Method", "Section",
+ CellChangeTimes->{{3.776968639430567*^9, 3.7769686456678753`*^9}, {
+  3.903084590754945*^9, 
+  3.90308459322921*^9}},ExpressionUUID->"6943093f-8a76-4b29-9b2d-\
+76d8c3875b28"],
+
+Cell[CellGroupData[{
+
+Cell["Task 1: Determine the probability function of S", "Subsection",
+ CellChangeTimes->{{3.77696866259708*^9, 3.7769686705079107`*^9}, 
+   3.902824160742794*^9, {3.902827344627631*^9, 
+   3.902827347865378*^9}},ExpressionUUID->"7e65a304-4725-4568-8fa8-\
+1b4ca87c4741"],
+
+Cell["\<\
+We will first define the probability distributions for each of the Platonic \
+Solids. We will assume that each die is fair, meaning that each outcome is \
+equally likely. Here are the probability distributions for each die:\
+\>", "Text",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+  3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+  3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+  3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+  3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+  3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+  3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+  3.902825721136454*^9, 
+  3.902825723360231*^9}},ExpressionUUID->"9a82b38d-63ee-4be8-b68f-\
+d4eb0071d4ff"],
+
+Cell[TextData[{
+ "Tetrahedron (4-sided die)\n\t",
+ StyleBox["Probability of each outcome (1 to 4) is 1/4.",
+  FontSize->13]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
+   3.902825361004925*^9}, 
+   3.9028257429699707`*^9},ExpressionUUID->"827d86c0-150a-43d6-b01b-\
+376829f6f38c"],
+
+Cell[TextData[{
+ "Hexahedron (6-sided die)\n\t",
+ StyleBox["Probability of each outcome (1 to 6) is 1/6.",
+  FontSize->13]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
+   3.902825361004925*^9}, {3.9028254879390717`*^9, 3.9028255047932777`*^9}, 
+   3.9028257440257607`*^9},ExpressionUUID->"05116754-3c71-407f-bd7f-\
+1d47c4201905"],
+
+Cell[TextData[{
+ "Octahedron (8-sided die)\n\t",
+ StyleBox["Probability of each outcome (1 to 8) is 1/8.",
+  FontSize->13]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
+   3.902825361004925*^9}, {3.902825535082329*^9, 3.902825545392989*^9}, 
+   3.902825745182116*^9},ExpressionUUID->"89f5e765-d78f-49c7-8d93-\
+bcb3614209ee"],
+
+Cell[TextData[{
+ "Dodecahedron (12-sided die)\n\t",
+ StyleBox["Probability of each outcome (1 to 12) is 1/12.",
+  FontSize->13]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
+   3.902825361004925*^9}, {3.902825563454699*^9, 3.902825576558172*^9}, 
+   3.902825746357998*^9},ExpressionUUID->"2c89aacd-b43a-4e15-b556-\
+6b6f8ff9ea35"],
+
+Cell[TextData[{
+ "Icosahedron (20-sided die)\n\t",
+ StyleBox["Probability of each outcome (1 to 20) is 1/20.",
+  FontSize->13]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
+   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
+   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
+   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
+   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
+   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
+   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
+   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
+   3.902825361004925*^9}, {3.9028255877333384`*^9, 3.902825594974588*^9}, 
+   3.902825747863851*^9},ExpressionUUID->"142818a5-c84a-46ca-bd7a-\
+b1e5d7b504df"],
+
+Cell["\<\
+Now, we can calculate the convolution of these probability distributions to \
+find the probability distribution of the sum S.\
+\>", "Text",
+ CellChangeTimes->{{3.902825706546227*^9, 3.902825714184568*^9}, 
+   3.902825764930689*^9, {3.902825860094575*^9, 
+   3.9028258604887342`*^9}},ExpressionUUID->"c60e4ea6-b4ab-403e-9dec-\
+8ef0a424d199"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Task 2: Determine the probability of winning the game", "Subsection",
+ CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, 
+   3.902827412802197*^9},ExpressionUUID->"1db48066-a568-4f09-a9b7-\
+7f37a8e3983c"],
+
+Cell["\<\
+To determine the probability of winning the game, we need to sum the \
+probabilities of all values of S where S <= 10 or S >= 45.\
+\>", "Text",
+ CellChangeTimes->{{3.776968872425674*^9, 3.776968878496433*^9}, 
+   3.777219770827114*^9, {3.7772198325744534`*^9, 3.7772199770952053`*^9}, {
+   3.777220021784422*^9, 3.7772200330739594`*^9}, 3.7772200721755147`*^9, {
+   3.777220138561649*^9, 3.7772201459992766`*^9}, {3.7772201808057384`*^9, 
+   3.7772202041251707`*^9}, 
+   3.9028274325923777`*^9},ExpressionUUID->"cb999855-5bce-427b-835c-\
+9314afc05b4c"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Task 3: Obtain the probability of winning the game with 1000 trials (Monte \
+Carlo simulation)\
+\>", "Subsection",
+ CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
+  3.7769689193598886`*^9, 3.7769689370694237`*^9}, {3.902830511189522*^9, 
+  3.902830515469439*^9}},ExpressionUUID->"8a6b3a02-52c4-4900-aa72-\
+13105a1716f8"],
+
+Cell["\<\
+In this task, we will simulate throwing the five Platonic Solid dice 1000 \
+times and calculate the proportion of simulations where we win. The steps are \
+as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.7772211083183427`*^9, 3.7772211130540495`*^9}, {
+   3.7772212161572037`*^9, 3.777221216513251*^9}, {3.7772233323715982`*^9, 
+   3.7772233759150677`*^9}, {3.7772234149602013`*^9, 
+   3.7772235172677965`*^9}, {3.777223556862294*^9, 3.777223707491474*^9}, {
+   3.902831105095085*^9, 3.902831148596355*^9}, 3.902831256645185*^9, {
+   3.902831372293313*^9, 
+   3.902831372943625*^9}},ExpressionUUID->"5456827d-1f6f-41f4-a360-\
+f28a057a69c4"],
+
+Cell["\<\
+Simulate rolling each of the five dice in each trial and calculate the sum S \
+for each trial.\
+\>", "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.9028313076255207`*^9, 
+  3.902831325039919*^9}},ExpressionUUID->"791fbfc0-2639-4b95-8ce9-\
+a43ddae15f87"],
+
+Cell["\<\
+Count the number of trials where S satisfies the winning condition (S <= 10 \
+or S >= 45).\
+\>", "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.9028313076255207`*^9, 3.902831325039919*^9}, 
+   3.902831359596208*^9},ExpressionUUID->"a233a485-2691-413e-8144-\
+bdc44d0dab0a"],
+
+Cell["\<\
+Calculate the probability of winning as the ratio of the number of winning \
+trials to the total number of trials (1000 in this case).\
+\>", "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.9028313076255207`*^9, 3.902831325039919*^9}, 
+   3.902831366583123*^9},ExpressionUUID->"5e1fbcfa-9b3b-4deb-b943-\
+41ef048e0ce0"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Task 4: Discuss how the probability changes with the number of trials and \
+provide a figure.\
+\>", "Subsection",
+ CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
+   3.776968950644105*^9, 3.7769689792296224`*^9}, {3.777224905807621*^9, 
+   3.77722491149018*^9}, {3.902831402929357*^9, 3.902831406390788*^9}, 
+   3.9028315034231577`*^9},ExpressionUUID->"73766100-8bcb-47fa-93f0-\
+67c723ac4e02"],
+
+Cell[TextData[{
+ "To observe how the probability changes with the number of trials, we can \
+perform the simulation for various numbers of trials, ranging from a small \
+number, 2, to a large number, ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "18"], TraditionalForm]],ExpressionUUID->
+  "f00bedb2-0161-4662-b2d2-1e603e12fa11"],
+ ". Then we can create a plot to visualize this change."
+}], "Text",
+ CellChangeTimes->{{3.777221488439082*^9, 3.7772215098326426`*^9}, 
+   3.77722589721934*^9, 3.7772259585184555`*^9, {3.90283154736926*^9, 
+   3.902831559766138*^9}, {3.902831618713277*^9, 3.902831633443609*^9}, {
+   3.902831670692214*^9, 3.902831738374301*^9}, {3.902831776128661*^9, 
+   3.902831827617818*^9}, {3.903015606343207*^9, 3.9030156494838*^9}, {
+   3.903015683063308*^9, 3.9030156905756474`*^9}, 3.903015726652512*^9, {
+   3.903018275903961*^9, 3.903018334847601*^9}, 3.9030832194615393`*^9, {
+   3.903166260403055*^9, 
+   3.903166261135803*^9}},ExpressionUUID->"f45f8247-fb87-407a-add7-\
+181f3afab2e7"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Task 5: Determine the number of trials needed to keep the relative error \
+below 10%. Provide reasoning.\
+\>", "Subsection",
+ CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
+   3.776968950644105*^9, 3.7769689792296224`*^9}, {3.777224905807621*^9, 
+   3.77722491149018*^9}, {3.902831402929357*^9, 3.902831406390788*^9}, 
+   3.9028315034231577`*^9, {3.90283185754329*^9, 3.902831857715784*^9}, 
+   3.9028319304901752`*^9},ExpressionUUID->"f4cf7edc-3d0d-4d8e-84d8-\
+2f421e768568"],
+
+Cell["\<\
+To determine the number of trials needed to achieve a relative error value \
+below 10% between the exact probability and the simulation probability, we \
+can perform Monte Carlo simulations with increasing numbers of trials until \
+we get a relative error value that is less than 10%. Since the simulation \
+result can vary, the aforementioned test  is repeated a number of times so \
+that we can calculate the average number of trials required to get a relative \
+error value that is less than 10%. 
+
+We also analyze the probability of getting an error value less than 10% for \
+different number of trials, this is done by picking a trial number to use for \
+the Monte Carlo simulation and then repeating the simulation a certain amount \
+of times while keeping track of the number of simulations that satisfies our \
+condition. By doing this we approximate the probability of the relative error \
+rate being less than 10% for different number of trials.\
+\>", "Text",
+ CellChangeTimes->{{3.777221488439082*^9, 3.7772215098326426`*^9}, 
+   3.77722589721934*^9, 3.7772259585184555`*^9, {3.90283154736926*^9, 
+   3.902831559766138*^9}, {3.902831618713277*^9, 3.902831633443609*^9}, {
+   3.902831670692214*^9, 3.902831738374301*^9}, {3.902831776128661*^9, 
+   3.902831827617818*^9}, {3.902831914487232*^9, 3.90283195893148*^9}, {
+   3.902832083616901*^9, 3.9028320858198347`*^9}, {3.90307858616523*^9, 
+   3.903078643247258*^9}, {3.903078721166388*^9, 3.9030787893789597`*^9}, {
+   3.9030831806962347`*^9, 3.9030831868248158`*^9}, {3.9030832567049837`*^9, 
+   3.903083743547783*^9}, {3.903083778605969*^9, 3.903083815157011*^9}, {
+   3.903166289348476*^9, 
+   3.903166352354546*^9}},ExpressionUUID->"74585d98-686d-478b-bb23-\
+0e535764c932"]
+}, Closed]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Result", "Section",ExpressionUUID->"8653cf74-40b5-4cd0-9bec-547770821df5"],
 
 Cell[TextData[{
  "Determine the probability function of S. Express it as a form of a table.\n\
@@ -694,7 +989,7 @@ Cell[TextData[{
   "Output",
   CellChangeTimes->{{3.9029742082489557`*^9, 3.902974223957058*^9}, 
     3.9029744489338408`*^9, 3.902975324632045*^9},ExpressionUUID->
-  "37046491-8f0f-41aa-b108-ae1eea9030d9"]
+  "066585aa-1527-4e63-a764-ba1f00f4f0d2"]
 }], "Text",
  CellDingbat->"\[FilledSmallCircle]",
  CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
@@ -718,8 +1013,8 @@ Cell[TextData[{
    3.7772213382330065`*^9, 3.777221401470441*^9}, {3.7772221071153374`*^9, 
    3.777222361677754*^9}, 3.902838157785902*^9, {3.902980182484213*^9, 
    3.902980185618525*^9}, {3.902980268785904*^9, 
-   3.902980303881567*^9}},ExpressionUUID->"1bf59983-7c21-4d19-805a-\
-0068e3a1cdc7"],
+   3.902980303881567*^9}},ExpressionUUID->"ea8e35dc-ae66-4a25-8f60-\
+15c70362c36a"],
 
 Cell[TextData[{
  "Determine the probability of winning the game.\n",
@@ -727,7 +1022,7 @@ Cell[TextData[{
   FractionBox["41", "3840"]], "Output",
   CellChangeTimes->{3.9028276436313667`*^9, 3.9028374331313057`*^9, 
    3.90283812106896*^9, 3.902975358757791*^9},ExpressionUUID->
-  "4b040b56-9393-4fa8-9126-4e558a47849f"]
+  "22d7d51c-0c65-4858-91dd-370dccad2aef"]
 }], "Text",
  CellDingbat->"\[FilledSmallCircle]",
  CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
@@ -752,8 +1047,8 @@ Cell[TextData[{
    3.777222361677754*^9}, 3.902838157785902*^9, {3.902980182484213*^9, 
    3.902980185618525*^9}, {3.902980268785904*^9, 3.902980303881567*^9}, {
    3.90298034466263*^9, 
-   3.90298038647147*^9}},ExpressionUUID->"e957b738-d831-4901-9811-\
-eaef107cce85"],
+   3.90298038647147*^9}},ExpressionUUID->"09d75b6d-d703-4846-8962-\
+538093b983da"],
 
 Cell[TextData[{
  "Obtain the probability of winning the game with 1000 trials.\n",
@@ -763,7 +1058,7 @@ Cell[TextData[{
   CellAutoOverwrite->False,
   CellChangeTimes->{3.9028276436313667`*^9, 3.9028374331313057`*^9, 
    3.90283812106896*^9, 3.902975358757791*^9},ExpressionUUID->
-  "ddd0aaf0-cd71-407f-84d3-209bbc03fc4f"]
+  "3b731ef0-a1b0-4620-a120-c8578de2dfe5"]
 }], "Text",
  CellDingbat->"\[FilledSmallCircle]",
  CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
@@ -788,39 +1083,13 @@ Cell[TextData[{
    3.777222361677754*^9}, 3.902838157785902*^9, {3.902980182484213*^9, 
    3.902980185618525*^9}, {3.902980268785904*^9, 3.902980303881567*^9}, {
    3.90298034466263*^9, 
-   3.9029804604944077`*^9}},ExpressionUUID->"a447b94f-a52d-42ba-9c7e-\
-b05119c27a77"],
+   3.9029804604944077`*^9}},ExpressionUUID->"867c384f-ea9a-4482-bcad-\
+1686a5a121f0"],
 
 Cell[TextData[{
  "Discuss how the probability changes with the number of trials and provide a \
-figure.\n\nThe idea behind a Monte Carlo simulation is to approximate the \
-probability of a certain event rather than mathematically evaluate it. This \
-can be useful if the evaluation is complex or difficult, or if one simply \
-does not know how to evaluate it. The accuracy of the probability \
-approximation increases as the number of trials increases. And as the number \
-of trials become arbitrarily large ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"N", "->", " ", "\[Infinity]", " "}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "687cb849-180b-40f2-88ad-5c61d24a10f7"],
- " then ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    SubscriptBox["P", "montecarlo"], "=", "P"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "53a1865b-df95-4696-8656-8245fe1ec856"],
- ", the approximation will equal the actual probability.\n\nTo investigate \
-how the probability changes with different numbers of trials, we can repeat \
-Task 3 with varying numbers of trials , 2 to ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["2", "18"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "239ff4c9-ce99-46b3-9c36-cb3721a20800"],
- " and observe the results. \n\nBelow is a plot of the probability estimation \
-with increasing number of trials. \n",
+figure(Results).\n\nBelow is a plot of the probability estimation with \
+increasing number of trials. \n",
  Cell[BoxData[
   GraphicsBox[{{}, 
     InterpretationBox[{
@@ -1115,7 +1384,7 @@ with increasing number of trials. \n",
         0.}}, {-3.2188758248682006`, 
         FormBox[
          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}}}]]], 
-  "Output",ExpressionUUID->"14e57ddc-85fa-44f4-a597-facd3064142f"],
+  "Output",ExpressionUUID->"cea8e2c0-f759-4e50-83e3-9674c1a57952"],
  "\nBelow is another plot. But it is instead of how the probability \
 estimation changes with ",
  Cell[BoxData[
@@ -1123,8 +1392,7 @@ estimation changes with ",
    RowBox[{
     SubscriptBox["log", "2"], "(", 
     RowBox[{"number", " ", "of", " ", "trials"}], ")"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "7af5ad2b-6dbb-4461-b833-77848dd38dd7"],
+  ExpressionUUID->"a6ccab26-e334-4a00-9216-82d3adec92c4"],
  ". The red line is the actual probability value as calculated in task 2. \n\
 ",
  Cell[BoxData[
@@ -1478,10 +1746,7 @@ CP7VJ4tnT1+mjbDP+uEZpwAdOP/4lJMvfTh04fymySG3BLYg+FxTurYZ5+nB
       Scaled[0.02], 
       Scaled[0.05]}},
    Ticks->{Automatic, Automatic}]], "Output",ExpressionUUID->
-  "15527c90-dd22-444e-87c5-020544d429fa"],
- "\nAs can be seen by the plots with increasing number of trials we get an \
-increasingly accurate probability estimation, As expected by a Monte Carlo \
-simulation."
+  "8b879981-b5e3-405f-ab0f-0a22ba311d65"]
 }], "Text",
  CellDingbat->"\[FilledSmallCircle]",
  CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
@@ -1512,45 +1777,945 @@ simulation."
    3.903019701172777*^9}, {3.903020453789019*^9, 3.903020461200012*^9}, {
    3.903020589108829*^9, 3.903020596593733*^9}, {3.903020661947689*^9, 
    3.903020941473577*^9}, {3.903020999295446*^9, 3.90302124056736*^9}, {
-   3.9030212796706142`*^9, 
-   3.9030213578416767`*^9}},ExpressionUUID->"425146fc-3d16-4609-9ab0-\
-a6d9eb45f6b7"],
+   3.9030212796706142`*^9, 3.9030213578416767`*^9}, {3.903164473175991*^9, 
+   3.903164499384729*^9}},ExpressionUUID->"7f446376-4c9b-43f2-a10f-\
+678c72cb0e3a"],
 
 Cell[TextData[{
  "Determine the number of trials needed to keep the relative error below 10%. \
-Provide reasoning.\n\nThe Monte Carlo principle can be described as:\n\nIf ",
+Provide reasoning.\n\nAverage number of trials across multiple Monte Carlo \
+simulations before reaching a relative error less than 10% is 2228 trials.\n\n\
+Approximation of probabilities of a relative error rate of less than 10% for \
+different number of trials:\n",
  Cell[BoxData[
-  FormBox["N", TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "cc4e2d63-397f-44d1-b194-e2bb35747358"],
- " is the size of the sample space, number of simulations, and ",
+  TagBox[GridBox[{
+     {"\<\"trials\"\>", "\<\"\\!\\(TraditionalForm\\`P(relative\\\\ error\\\\ \
+ < \\\\ 10)\\)\"\>"},
+     {"1000", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"27%\"\>",
+         ShowStringCharacters->False],
+        0.27,
+        AutoDelete->True],
+       PercentForm]},
+     {"2228", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"41%\"\>",
+         ShowStringCharacters->False],
+        0.41,
+        AutoDelete->True],
+       PercentForm]},
+     {"5000", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"53%\"\>",
+         ShowStringCharacters->False],
+        0.53,
+        AutoDelete->True],
+       PercentForm]},
+     {"10000", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"62%\"\>",
+         ShowStringCharacters->False],
+        0.62,
+        AutoDelete->True],
+       PercentForm]},
+     {"20000", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"85%\"\>",
+         ShowStringCharacters->False],
+        0.85,
+        AutoDelete->True],
+       PercentForm]},
+     {"46080", 
+      TagBox[
+       InterpretationBox[
+        StyleBox["\<\"99%\"\>",
+         ShowStringCharacters->False],
+        0.99,
+        AutoDelete->True],
+       PercentForm]}
+    },
+    AutoDelete->False,
+    GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+   "Grid"]], "Output",
+  CellChangeTimes->{
+   3.9030821352698793`*^9, 3.9030823274869013`*^9, {3.903082479601362*^9, 
+    3.903082484980245*^9}},ExpressionUUID->
+  "4ef16a79-23b9-4b15-86c4-b67e7607d6e3"]
+}], "Text",
+ CellDingbat->"\[FilledSmallCircle]",
+ CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
+   3.7769558026027794`*^9, 3.7769558277286415`*^9}, {3.7769558692790627`*^9, 
+   3.776956004892793*^9}, {3.7769560739302015`*^9, 3.776956074708269*^9}, {
+   3.7769561259319*^9, 3.776956186456003*^9}, {3.7769562280216913`*^9, 
+   3.776956355351681*^9}, {3.776956426274366*^9, 3.7769566034903727`*^9}, 
+   3.776956669599334*^9, {3.776956721762931*^9, 3.7769568877450266`*^9}, {
+   3.776964804886778*^9, 3.776964808729353*^9}, {3.776965075945921*^9, 
+   3.7769650770714192`*^9}, {3.776965238389321*^9, 3.7769652867091885`*^9}, {
+   3.776965322391895*^9, 3.7769654002767076`*^9}, {3.776965441663559*^9, 
+   3.776965476142866*^9}, {3.776965506362092*^9, 3.776965579854154*^9}, {
+   3.7769656188628044`*^9, 3.7769656476973495`*^9}, {3.7769656929899225`*^9, 
+   3.776965717767578*^9}, {3.776965748855176*^9, 3.776965752118764*^9}, {
+   3.776966053686802*^9, 3.7769661893428483`*^9}, {3.7769662249698143`*^9, 
+   3.7769662538076563`*^9}, {3.776966288963253*^9, 3.7769664170111666`*^9}, {
+   3.776966483367133*^9, 3.7769664850147285`*^9}, {3.776966530554881*^9, 
+   3.776966556467556*^9}, {3.7769667085151277`*^9, 3.7769667864299436`*^9}, {
+   3.7769668244542074`*^9, 3.776966851930696*^9}, {3.7769669219403515`*^9, 
+   3.7769669850780067`*^9}, {3.7769670280071507`*^9, 3.776967029445303*^9}, {
+   3.7772213382330065`*^9, 3.777221401470441*^9}, {3.7772221071153374`*^9, 
+   3.777222361677754*^9}, 3.902838157785902*^9, {3.902980182484213*^9, 
+   3.902980185618525*^9}, {3.902980268785904*^9, 3.902980303881567*^9}, {
+   3.90298034466263*^9, 3.9029804604944077`*^9}, 3.902980720434923*^9, {
+   3.9029808195240307`*^9, 3.90298082105271*^9}, {3.90298087397423*^9, 
+   3.902980919365486*^9}, {3.902980965313325*^9, 3.9029809679221573`*^9}, 
+   3.903083876826473*^9, 3.90308398827251*^9, 3.903084018785603*^9, {
+   3.9030841067877274`*^9, 3.90308449278174*^9}, {3.903084537361545*^9, 
+   3.903084873900758*^9}, {3.903084919162099*^9, 3.903085286231724*^9}, {
+   3.9030853288382196`*^9, 3.903085567408803*^9}, {3.903085691668981*^9, 
+   3.903086006232938*^9}, {3.903086041633306*^9, 3.903086171838311*^9}, {
+   3.903164758603264*^9, 
+   3.90316489209179*^9}},ExpressionUUID->"9af4fb7c-68ac-4da0-8f60-\
+4ffa102eebef"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Discussion", "Section",
+ CellChangeTimes->{{3.9031617713332357`*^9, 
+  3.903161773102359*^9}},ExpressionUUID->"aa835639-0a53-431e-9287-\
+5cf2ce5a12a0"],
+
+Cell[CellGroupData[{
+
+Cell["Task 1", "Subsection",
+ CellChangeTimes->{{3.903162297377091*^9, 
+  3.903162302413362*^9}},ExpressionUUID->"dc742a4d-e51f-46f4-bcf2-\
+38c366316189"],
+
+Cell[TextData[{
+ "The problem statement can be described as:\n",
  Cell[BoxData[
-  FormBox["m", TraditionalForm]],
+  FormBox[
+   RowBox[{"\t", 
+    RowBox[{"S", " ", "=", " ", 
+     RowBox[{
+      SubscriptBox["X", "4"], "+", 
+      SubscriptBox["X", "6"], "+", 
+      SubscriptBox["X", "8"], "+", 
+      SubscriptBox["X", "12"], "+", 
+      SubscriptBox["X", "20"]}]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "36f41eb0-76ad-4cb3-a2ec-d6ba57be62e8"],
- " is the number of simulations that satisfy a certain condition C. And if we \
-know the true probability of C. Then ",
+  "c0c6b0b3-7ab1-462e-95ae-4e8f16d14557"],
+ "\nWhere ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"P", "(", "C", ")"}], "\[TildeTilde]", " ", 
-    RowBox[{"m", "/", "N"}]}], TraditionalForm]],
+    SubscriptBox["X", "i"], "=", " ", 
+    RowBox[{
+    "The", " ", "numbered", " ", "side", " ", "we", " ", "get", " ", "when", 
+     " ", "throwing", " ", "an", " ", Cell[
+     "i",ExpressionUUID->"bcb95400-4632-4574-ad1a-af5b4f526b6d"], " ", 
+     "sided", " ", "platonic", " ", 
+     RowBox[{"dice", "."}]}]}], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "23840c9e-097d-4d9b-a033-724a077a5e21"],
- " and if ",
+  "0f30cc2e-19ef-4341-a7d0-5f7804ff6443"],
+ "\nTo get the probability distribution of S  we convolve the probability \
+distributions of each ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"N", "->", "\[Infinity]"}], TraditionalForm]],
+   SubscriptBox["X", "i"], TraditionalForm]],
   FormatType->TraditionalForm,ExpressionUUID->
-  "b121e708-7c6f-4db8-ac74-3e36205afed3"],
+  "44943854-23b1-4e99-874c-df38bd6139c8"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.903162432198104*^9, 3.903162648588394*^9}, {
+  3.903163248849862*^9, 
+  3.903163326160166*^9}},ExpressionUUID->"ca50d1d2-05da-4a3a-b9b6-\
+d4151985c9c1"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Task 2", "Subsection",
+ CellChangeTimes->{{3.9031633541103973`*^9, 
+  3.903163356861939*^9}},ExpressionUUID->"14231526-6f58-4fe2-8485-\
+f01b88e47bfa"],
+
+Cell[TextData[{
+ "To determine the probability of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "s"], "(", 
+    RowBox[{"S", "<=", " ", 
+     RowBox[{"10", " ", "\[Union]", "S"}], ">=", "45"}], ")"}], 
+   TraditionalForm]],ExpressionUUID->"119afe7f-5507-4e1e-af82-833709b97975"],
+ " we realize that the set of elements in the sample space which leads to ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"S", "(", "u", ")"}], "=", "s"}], TraditionalForm]],
+  ExpressionUUID->"0e3eaa1a-c50e-4805-a5d3-b51b6faebdca"],
+ " is unique for each possible s. Basically all the events in the sample \
+space are disjoint.\nAnd by Kolmogorov\[CloseCurlyQuote]s axiom the \
+probability is essentially this sum of probability distributions:\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\t", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["P", "s"], "(", 
+      RowBox[{"S", "<=", " ", 
+       RowBox[{"10", " ", "\[Union]", "S"}], ">=", "45"}], ")"}], " ", "=", 
+     " ", 
+     RowBox[{
+      RowBox[{
+       SubscriptBox["P", "s"], "(", 
+       RowBox[{"S", "<=", "10"}], ")"}], "+", 
+      RowBox[{
+       SubscriptBox["P", "s"], "(", 
+       RowBox[{"S", ">=", "45"}], ")"}]}]}]}], TraditionalForm]],
+  ExpressionUUID->"e9d1a57f-9d82-4b3a-a9a5-ba5d05e9213b"]
+}], "Text",
+ CellChangeTimes->{{3.90316402054346*^9, 
+  3.903164181253834*^9}},ExpressionUUID->"44c2f059-02d7-438e-8702-\
+8ce977c395df"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Task 3 & 4", "Subsection",
+ CellChangeTimes->{{3.903164205519594*^9, 3.903164208357931*^9}, {
+  3.903164285622919*^9, 
+  3.9031642867688923`*^9}},ExpressionUUID->"3bdc868f-a78d-44b7-9275-\
+bca802b72d83"],
+
+Cell[TextData[{
+ "The idea behind a Monte Carlo simulation is to approximate the probability \
+of a certain event rather than mathematically evaluate it. This can be useful \
+if the evaluation is complex or difficult, or if one simply does not know how \
+to evaluate it. The accuracy of the probability approximation increases as \
+the number of trials increases. And as the number of trials become \
+arbitrarily large ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "->", " ", "\[Infinity]", " "}], TraditionalForm]],
+  ExpressionUUID->"83adb1b5-3b6b-4b92-b6e8-689353cd7167"],
  " then ",
  Cell[BoxData[
   FormBox[
    RowBox[{
-    RowBox[{"P", "(", "C", ")"}], "=", 
-    RowBox[{"m", "/", "N"}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "b256b2b7-b259-45d6-b9f5-b90d73dc33ea"],
+    SubscriptBox["P", "montecarlo"], "=", "P"}], TraditionalForm]],
+  ExpressionUUID->"a4fd16c4-c29f-4a6d-8d6d-f50e1d34eab7"],
+ ", the approximation will equal the actual probability.\n\nFor task 4 to \
+investigate how the probability changes with different numbers of trials, we \
+can repeat Task 3 with varying numbers of trials , 2 to ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["2", "18"], TraditionalForm]],ExpressionUUID->
+  "ae519503-232c-44f4-9918-6feff1c1c175"],
+ " and observe the results.\n\nTask 4 plot:\n",
+ Cell[BoxData[
+  GraphicsBox[{{}, 
+    InterpretationBox[{
+      TagBox[{{}, {}, 
+        TagBox[
+         {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+          0.012833333333333334`], AbsoluteThickness[2], 
+          LineBox[{{256., -4.852030263919617}, {512., -4.041100047703289}, {
+           1024., -4.734247228263234}, {2048., -4.580096548435975}, {
+           4096., -4.76241810522993}, {8192., -4.680180006992958}, {
+           16384., -4.604194100015036}, {32768., -4.680180006992958}, {
+           65536., -4.592072739482691}, {131072., -4.60495658575537}, {
+           262144., -4.592449316402976}}]},
+         Annotation[#, "Charting`Private`Tag#1"]& ]},
+       {"WolframDynamicHighlight", <|
+        "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>}], 
+      DynamicBox[(Charting`HighlightActionBox["DynamicHighlight", {}, 
+        Slot["HighlightElements"], 
+        Slot["LayoutOptions"], 
+        Slot["Meta"], 
+        Charting`HighlightActionFunction["DynamicHighlight", {{{}, {}, 
+           Annotation[{
+             Hue[0.67, 0.6, 0.6], 
+             Directive[
+              PointSize[0.012833333333333334`], 
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              AbsoluteThickness[2]], 
+             
+             Line[{{256., -4.852030263919617}, {512., -4.041100047703289}, {
+              1024., -4.734247228263234}, {2048., -4.580096548435975}, {
+              4096., -4.76241810522993}, {8192., -4.680180006992958}, {
+              16384., -4.604194100015036}, {32768., -4.680180006992958}, {
+              65536., -4.592072739482691}, {131072., -4.60495658575537}, {
+              262144., -4.592449316402976}}]}, "Charting`Private`Tag#1"]}}, <|
+         "HighlightElements" -> <|
+           "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+          "LayoutOptions" -> <|
+           "PlotRange" -> {{
+              0, 163072.}, {-4.9605156649391455`, -3.4657359027997265`}}, 
+            "Frame" -> {{False, False}, {False, False}}, 
+            "AxesOrigin" -> {0, -4.9605156649391455`}, 
+            "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+            "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+            "DefaultStyle" -> {
+              Directive[
+               PointSize[0.012833333333333334`], 
+               RGBColor[0.368417, 0.506779, 0.709798], 
+               AbsoluteThickness[2]]}, 
+            "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+                Identity[
+                 Part[#, 1]], 
+                Exp[
+                 Part[#, 2]]}& ), 
+              "ScalingFunctions" -> {{Identity, Identity}, {Log, Exp}}|>, 
+            "Primitives" -> {}, "GCFlag" -> False|>, 
+          "Meta" -> <|
+           "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+            ListLogPlot, "GroupHighlight" -> False|>|>]]& )[<|
+        "HighlightElements" -> <|
+          "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+         "LayoutOptions" -> <|
+          "PlotRange" -> {{
+             0, 163072.}, {-4.9605156649391455`, -3.4657359027997265`}}, 
+           "Frame" -> {{False, False}, {False, False}}, 
+           "AxesOrigin" -> {0, -4.9605156649391455`}, 
+           "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+           "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+           "DefaultStyle" -> {
+             Directive[
+              PointSize[0.012833333333333334`], 
+              RGBColor[0.368417, 0.506779, 0.709798], 
+              AbsoluteThickness[2]]}, 
+           "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+               Identity[
+                Part[#, 1]], 
+               Exp[
+                Part[#, 2]]}& ), 
+             "ScalingFunctions" -> {{Identity, Identity}, {Log, Exp}}|>, 
+           "Primitives" -> {}, "GCFlag" -> False|>, 
+         "Meta" -> <|
+          "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+           ListLogPlot, "GroupHighlight" -> False|>|>],
+       ImageSizeCache->{{4.503599627370496*^15, -4.503599627370496*^15}, {
+        4.503599627370496*^15, -4.503599627370496*^15}}]},
+     Annotation[{{{}, {}, 
+        Annotation[{
+          Hue[0.67, 0.6, 0.6], 
+          Directive[
+           PointSize[0.012833333333333334`], 
+           RGBColor[0.368417, 0.506779, 0.709798], 
+           AbsoluteThickness[2]], 
+          
+          Line[{{256., -4.852030263919617}, {512., -4.041100047703289}, {
+           1024., -4.734247228263234}, {2048., -4.580096548435975}, {
+           4096., -4.76241810522993}, {8192., -4.680180006992958}, {
+           16384., -4.604194100015036}, {32768., -4.680180006992958}, {
+           65536., -4.592072739482691}, {131072., -4.60495658575537}, {
+           262144., -4.592449316402976}}]}, "Charting`Private`Tag#1"]}}, <|
+      "HighlightElements" -> <|
+        "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+       "LayoutOptions" -> <|
+        "PlotRange" -> {{
+           0, 163072.}, {-4.9605156649391455`, -3.4657359027997265`}}, 
+         "Frame" -> {{False, False}, {False, False}}, 
+         "AxesOrigin" -> {0, -4.9605156649391455`}, 
+         "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+         "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+         "DefaultStyle" -> {
+           Directive[
+            PointSize[0.012833333333333334`], 
+            RGBColor[0.368417, 0.506779, 0.709798], 
+            AbsoluteThickness[2]]}, 
+         "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+             Identity[
+              Part[#, 1]], 
+             Exp[
+              Part[#, 2]]}& ), 
+           "ScalingFunctions" -> {{Identity, Identity}, {Log, Exp}}|>, 
+         "Primitives" -> {}, "GCFlag" -> False|>, 
+       "Meta" -> <|
+        "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+         ListLogPlot, "GroupHighlight" -> False|>|>, 
+      "DynamicHighlight"]], {{}, {}}},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->{True, True},
+   AxesLabel->{
+     FormBox[
+      TagBox["\"Number of Trials\"", HoldForm], TraditionalForm], 
+     FormBox[
+      TagBox["\"Estimated Probability of Winning\"", HoldForm], 
+      TraditionalForm]},
+   AxesOrigin->{0, -4.9605156649391455`},
+   DisplayFunction->Identity,
+   Frame->{{False, False}, {False, False}},
+   FrameLabel->{{None, None}, {None, None}},
+   FrameTicks->{{
+      Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+       15.954589770191003`, RotateLabel -> 0], 
+      Charting`ScaledFrameTicks[{Log, Exp}]}, {Automatic, Automatic}},
+   GridLines->{None, None},
+   GridLinesStyle->Directive[
+     GrayLevel[0.5, 0.4]],
+   Method->{
+    "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+     "DefaultGraphicsInteraction" -> {
+      "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+       "Effects" -> {
+        "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+         "Droplines" -> {
+          "freeformCursorMode" -> True, 
+           "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+     "DefaultMeshStyle" -> AbsolutePointSize[6], "DefaultPlotStyle" -> {
+       Directive[
+        RGBColor[0.368417, 0.506779, 0.709798], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.880722, 0.611041, 0.142051], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.560181, 0.691569, 0.194885], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.922526, 0.385626, 0.209179], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.528488, 0.470624, 0.701351], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.772079, 0.431554, 0.102387], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.363898, 0.618501, 0.782349], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[1, 0.75, 0], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.647624, 0.37816, 0.614037], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.571589, 0.586483, 0.], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.915, 0.3325, 0.2125], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+        
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+        AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+     "PointSizeFunction" -> "SmallPointSize", "RangePadding" -> Scaled[0.05], 
+     "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> "CurrentSet", 
+     "HighlightStyle" -> Automatic, "OptimizePlotMarkers" -> True, 
+     "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+         Identity[
+          Part[#, 1]], 
+         Exp[
+          Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+         Identity[
+          Part[#, 1]], 
+         Exp[
+          Part[#, 2]]}& )}},
+   PlotLabel->FormBox[
+    "\"Change in Probability with Number of Trials\"", TraditionalForm],
+   PlotRange->{{0, 163072.}, {-4.9605156649391455`, -3.4657359027997265`}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{{
+      Scaled[0.02], 
+      Scaled[0.02]}, {
+      Scaled[0.02], 
+      Scaled[0.05]}},
+   Ticks->FrontEndValueCache[{Automatic, 
+      Charting`ScaledTicks[{Log, Exp}, {Log, Exp}, "Nice", WorkingPrecision -> 
+       15.954589770191003`, RotateLabel -> 0]}, {
+     Automatic, {{-4.605170185988091, 
+        FormBox[
+         TagBox[
+          InterpretationBox[
+           StyleBox["\"0.01\"", ShowStringCharacters -> False], 
+           0.01`15.954589770191003, AutoDelete -> True], NumberForm[#, {
+            DirectedInfinity[1], 2}]& ], TraditionalForm], {0.01, 
+        0.}}, {-3.912023005428146, 
+        FormBox[
+         TagBox[
+          InterpretationBox[
+           StyleBox["\"0.02\"", ShowStringCharacters -> False], 
+           0.02`15.954589770191003, AutoDelete -> True], NumberForm[#, {
+            DirectedInfinity[1], 2}]& ], TraditionalForm], {0.01, 
+        0.}}, {-3.506557897319982, 
+        FormBox[
+         TagBox[
+          InterpretationBox[
+           StyleBox["\"0.03\"", ShowStringCharacters -> False], 
+           0.03`15.954589770191003, AutoDelete -> True], NumberForm[#, {
+            DirectedInfinity[1], 2}]& ], TraditionalForm], {0.01, 
+        0.}}, {-6.214608098422191, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-5.521460917862246, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-5.115995809754082, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-4.8283137373023015`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-4.422848629194137, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-4.268697949366879, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-4.135166556742356, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-4.017383521085972, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.816712825623821, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.7297014486341915`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.649658740960655, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.575550768806933, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.4420193761824103`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.3813947543659757`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.3242363405260273`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.270169119255751, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 
+        0.}}, {-3.2188758248682006`, 
+        FormBox[
+         TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.005, 0.}}}}]]], 
+  "Output",ExpressionUUID->"e8dd4387-8e87-4549-9a5d-60a9c0502325"],
+ "\nTask4 log plot:\n",
+ Cell[BoxData[
+  GraphicsBox[{{{}, 
+     InterpretationBox[{
+       TagBox[{{}, {}, 
+         TagBox[
+          {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+           0.012833333333333334`], AbsoluteThickness[2], 
+           LineBox[{{1., 0.}, {2., 0.}, {3., 0.}, {4., 0.}, {5., 0.}, {6., 
+            0.03125}, {7., 0.}, {8., 0.0078125}, {9., 0.017578125}, {10., 
+            0.0087890625}, {11., 0.01025390625}, {12., 0.008544921875}, {13., 
+            0.00927734375}, {14., 0.010009765625}, {15., 0.00927734375}, {16.,
+             0.0101318359375}, {17., 0.01000213623046875}, {18., 
+            0.010128021240234375`}}]},
+          Annotation[#, "Charting`Private`Tag#1"]& ]},
+        {"WolframDynamicHighlight", <|
+         "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>}], 
+       DynamicBox[(Charting`HighlightActionBox["DynamicHighlight", {}, 
+         Slot["HighlightElements"], 
+         Slot["LayoutOptions"], 
+         Slot["Meta"], 
+         Charting`HighlightActionFunction["DynamicHighlight", {{{}, {}, 
+            Annotation[{
+              Hue[0.67, 0.6, 0.6], 
+              Directive[
+               PointSize[0.012833333333333334`], 
+               RGBColor[0.368417, 0.506779, 0.709798], 
+               AbsoluteThickness[2]], 
+              
+              Line[{{1., 0.}, {2., 0.}, {3., 0.}, {4., 0.}, {5., 0.}, {6., 
+               0.03125}, {7., 0.}, {8., 0.0078125}, {9., 0.017578125}, {10., 
+               0.0087890625}, {11., 0.01025390625}, {12., 0.008544921875}, {
+               13., 0.00927734375}, {14., 0.010009765625}, {15., 
+               0.00927734375}, {16., 0.0101318359375}, {17., 
+               0.01000213623046875}, {18., 0.010128021240234375`}}]}, 
+             "Charting`Private`Tag#1"]}}, <|
+          "HighlightElements" -> <|
+            "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+           "LayoutOptions" -> <|
+            "PlotRange" -> {{0, 18.}, {0, 0.03125}}, 
+             "Frame" -> {{False, False}, {False, False}}, 
+             "AxesOrigin" -> {0, 0}, "ImageSize" -> {360, 360/GoldenRatio}, 
+             "Axes" -> {True, True}, "LabelStyle" -> {}, "AspectRatio" -> 
+             GoldenRatio^(-1), "DefaultStyle" -> {
+               Directive[
+                PointSize[0.012833333333333334`], 
+                RGBColor[0.368417, 0.506779, 0.709798], 
+                AbsoluteThickness[2]]}, 
+             "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+                 Identity[
+                  Part[#, 1]], 
+                 Identity[
+                  Part[#, 2]]}& ), 
+               "ScalingFunctions" -> {{Identity, Identity}, {
+                 Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+             False|>, 
+           "Meta" -> <|
+            "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, 
+             "Function" -> ListPlot, "GroupHighlight" -> False|>|>]]& )[<|
+         "HighlightElements" -> <|
+           "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+          "LayoutOptions" -> <|
+           "PlotRange" -> {{0, 18.}, {0, 0.03125}}, 
+            "Frame" -> {{False, False}, {False, False}}, 
+            "AxesOrigin" -> {0, 0}, "ImageSize" -> {360, 360/GoldenRatio}, 
+            "Axes" -> {True, True}, "LabelStyle" -> {}, "AspectRatio" -> 
+            GoldenRatio^(-1), "DefaultStyle" -> {
+              Directive[
+               PointSize[0.012833333333333334`], 
+               RGBColor[0.368417, 0.506779, 0.709798], 
+               AbsoluteThickness[2]]}, 
+            "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+                Identity[
+                 Part[#, 1]], 
+                Identity[
+                 Part[#, 2]]}& ), 
+              "ScalingFunctions" -> {{Identity, Identity}, {
+                Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+            False|>, 
+          "Meta" -> <|
+           "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+            ListPlot, "GroupHighlight" -> False|>|>],
+        ImageSizeCache->{{4.503599627370496*^15, -4.503599627370496*^15}, {
+         4.503599627370496*^15, -4.503599627370496*^15}}]},
+      Annotation[{{{}, {}, 
+         Annotation[{
+           Hue[0.67, 0.6, 0.6], 
+           Directive[
+            PointSize[0.012833333333333334`], 
+            RGBColor[0.368417, 0.506779, 0.709798], 
+            AbsoluteThickness[2]], 
+           
+           Line[{{1., 0.}, {2., 0.}, {3., 0.}, {4., 0.}, {5., 0.}, {6., 
+            0.03125}, {7., 0.}, {8., 0.0078125}, {9., 0.017578125}, {10., 
+            0.0087890625}, {11., 0.01025390625}, {12., 0.008544921875}, {13., 
+            0.00927734375}, {14., 0.010009765625}, {15., 0.00927734375}, {16.,
+             0.0101318359375}, {17., 0.01000213623046875}, {18., 
+            0.010128021240234375`}}]}, "Charting`Private`Tag#1"]}}, <|
+       "HighlightElements" -> <|
+         "Label" -> {"XYLabel"}, "Ball" -> {"IndicatedBall"}|>, 
+        "LayoutOptions" -> <|
+         "PlotRange" -> {{0, 18.}, {0, 0.03125}}, 
+          "Frame" -> {{False, False}, {False, False}}, "AxesOrigin" -> {0, 0},
+           "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+          "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+          "DefaultStyle" -> {
+            Directive[
+             PointSize[0.012833333333333334`], 
+             RGBColor[0.368417, 0.506779, 0.709798], 
+             AbsoluteThickness[2]]}, 
+          "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+              Identity[
+               Part[#, 1]], 
+              Identity[
+               Part[#, 2]]}& ), 
+            "ScalingFunctions" -> {{Identity, Identity}, {
+              Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> False|>,
+         "Meta" -> <|
+         "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+          ListPlot, "GroupHighlight" -> False|>|>, 
+       "DynamicHighlight"]], {{}, {}}}, 
+    InterpretationBox[{
+      TagBox[{{{}, {}, 
+         TagBox[
+          {RGBColor[1, 0, 0], Thickness[0.002], Opacity[1.], 
+           LineBox[CompressedData["
+1:eJxTTMoPSmViYGAwAWIQXVOsGMvA8MH+3l0QaLW/33AtNWX1Jzjfqa8770TY
+Vzi/bLvv3XaF33D+/vZJX7hcGBxgfJnZ+4QdXjHB+Ru2Tnv44SQrnL8u/eff
+jgoOOP+xAsfJOQnccH6BY/haOWs+OH9zjcQH5yIBON8r5nbCtseCcP609scV
+c2yE4fy+Z91zd/aJwPlKnl0zp/wVhfOzvp+1eRwsDuf7rUzf/v6YBJx/r2+h
+nbGxFJyvfEAh91WbNJzP8vVrUfx3GTh/VqmAgoe/HJx/+mfDkneH5eH8KzdO
+SD2boQDnz731eVufsyKcb3zvpN20Pwj+knanWeErleD8117cNVuClOF8BoF6
+zwIuFTj/fdXUV0+3IvhrnoeV78pXhfPt8zK6tNTUEPKzZApDLiD4z09UO9/t
+UIfz/86pfSlvqgHnv+w6L/rvLoK/uOqMrvVUTTjfXCBH0shBC86fuXzbh/af
+CP7VJ4tnT1+mjbDP+uEZpwAdOP/4lJMvfTh04fymySG3BLYg+FxTurYZ5+nB
++ZnrBCQ/qejD+YvyLP2zziP4ITPadii4GMD5rmccjTNnIfiKvKqF/98h+E/O
+3VU56mUI5095nH4ofQGCr/fM657xBQT/xAvdX///I/gAOc302g==
+            "]]},
+          Annotation[#, "Charting`Private`Tag#1"]& ]}, {}},
+       {"WolframDynamicHighlight", <|
+        "Label" -> {"XYLabel"}, "Ball" -> {"InterpolatedBall"}|>}], 
+      DynamicBox[(Charting`HighlightActionBox["DynamicHighlight", {}, 
+        Slot["HighlightElements"], 
+        Slot["LayoutOptions"], 
+        Slot["Meta"], 
+        Charting`HighlightActionFunction["DynamicHighlight", {{{{}, {}, 
+            Annotation[{
+              Directive[
+               Opacity[1.], 
+               AbsoluteThickness[2], 
+               RGBColor[1, 0, 0], 
+               Thickness[0.002]], 
+              Line[CompressedData["
+1:eJxTTMoPSmViYGAwAWIQXVOsGMvA8MH+3l0QaLW/33AtNWX1Jzjfqa8770TY
+Vzi/bLvv3XaF33D+/vZJX7hcGBxgfJnZ+4QdXjHB+Ru2Tnv44SQrnL8u/eff
+jgoOOP+xAsfJOQnccH6BY/haOWs+OH9zjcQH5yIBON8r5nbCtseCcP609scV
+c2yE4fy+Z91zd/aJwPlKnl0zp/wVhfOzvp+1eRwsDuf7rUzf/v6YBJx/r2+h
+nbGxFJyvfEAh91WbNJzP8vVrUfx3GTh/VqmAgoe/HJx/+mfDkneH5eH8KzdO
+SD2boQDnz731eVufsyKcb3zvpN20Pwj+knanWeErleD8117cNVuClOF8BoF6
+zwIuFTj/fdXUV0+3IvhrnoeV78pXhfPt8zK6tNTUEPKzZApDLiD4z09UO9/t
+UIfz/86pfSlvqgHnv+w6L/rvLoK/uOqMrvVUTTjfXCBH0shBC86fuXzbh/af
+CP7VJ4tnT1+mjbDP+uEZpwAdOP/4lJMvfTh04fymySG3BLYg+FxTurYZ5+nB
++ZnrBCQ/qejD+YvyLP2zziP4ITPadii4GMD5rmccjTNnIfiKvKqF/98h+E/O
+3VU56mUI5095nH4ofQGCr/fM657xBQT/xAvdX///I/gAOc302g==
+               "]]}, "Charting`Private`Tag#1"]}}, {}}, <|
+         "HighlightElements" -> <|
+           "Label" -> {"XYLabel"}, "Ball" -> {"InterpolatedBall"}|>, 
+          "LayoutOptions" -> <|
+           "PlotRange" -> {{1, 18}, {0., 0.021354166666666667`}}, 
+            "Frame" -> {{False, False}, {False, False}}, 
+            "AxesOrigin" -> {1.0000000000000022`, 0}, 
+            "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+            "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+            "DefaultStyle" -> {
+              Directive[
+               Opacity[1.], 
+               AbsoluteThickness[2], 
+               RGBColor[1, 0, 0], 
+               Thickness[0.002]]}, 
+            "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+                Identity[
+                 Part[#, 1]], 
+                Identity[
+                 Part[#, 2]]}& ), 
+              "ScalingFunctions" -> {{Identity, Identity}, {
+                Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+            False|>, 
+          "Meta" -> <|
+           "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+            Plot, "GroupHighlight" -> False|>|>]]& )[<|
+        "HighlightElements" -> <|
+          "Label" -> {"XYLabel"}, "Ball" -> {"InterpolatedBall"}|>, 
+         "LayoutOptions" -> <|
+          "PlotRange" -> {{1, 18}, {0., 0.021354166666666667`}}, 
+           "Frame" -> {{False, False}, {False, False}}, 
+           "AxesOrigin" -> {1.0000000000000022`, 0}, 
+           "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+           "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+           "DefaultStyle" -> {
+             Directive[
+              Opacity[1.], 
+              AbsoluteThickness[2], 
+              RGBColor[1, 0, 0], 
+              Thickness[0.002]]}, 
+           "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+               Identity[
+                Part[#, 1]], 
+               Identity[
+                Part[#, 2]]}& ), 
+             "ScalingFunctions" -> {{Identity, Identity}, {
+               Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> 
+           False|>, 
+         "Meta" -> <|
+          "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+           Plot, "GroupHighlight" -> False|>|>],
+       ImageSizeCache->{{4.503599627370496*^15, -4.503599627370496*^15}, {
+        4.503599627370496*^15, -4.503599627370496*^15}}]},
+     Annotation[{{{{}, {}, 
+         Annotation[{
+           Directive[
+            Opacity[1.], 
+            AbsoluteThickness[2], 
+            RGBColor[1, 0, 0], 
+            Thickness[0.002]], 
+           Line[CompressedData["
+1:eJxTTMoPSmViYGAwAWIQXVOsGMvA8MH+3l0QaLW/33AtNWX1Jzjfqa8770TY
+Vzi/bLvv3XaF33D+/vZJX7hcGBxgfJnZ+4QdXjHB+Ru2Tnv44SQrnL8u/eff
+jgoOOP+xAsfJOQnccH6BY/haOWs+OH9zjcQH5yIBON8r5nbCtseCcP609scV
+c2yE4fy+Z91zd/aJwPlKnl0zp/wVhfOzvp+1eRwsDuf7rUzf/v6YBJx/r2+h
+nbGxFJyvfEAh91WbNJzP8vVrUfx3GTh/VqmAgoe/HJx/+mfDkneH5eH8KzdO
+SD2boQDnz731eVufsyKcb3zvpN20Pwj+knanWeErleD8117cNVuClOF8BoF6
+zwIuFTj/fdXUV0+3IvhrnoeV78pXhfPt8zK6tNTUEPKzZApDLiD4z09UO9/t
+UIfz/86pfSlvqgHnv+w6L/rvLoK/uOqMrvVUTTjfXCBH0shBC86fuXzbh/af
+CP7VJ4tnT1+mjbDP+uEZpwAdOP/4lJMvfTh04fymySG3BLYg+FxTurYZ5+nB
++ZnrBCQ/qejD+YvyLP2zziP4ITPadii4GMD5rmccjTNnIfiKvKqF/98h+E/O
+3VU56mUI5095nH4ofQGCr/fM657xBQT/xAvdX///I/gAOc302g==
+            "]]}, "Charting`Private`Tag#1"]}}, {}}, <|
+      "HighlightElements" -> <|
+        "Label" -> {"XYLabel"}, "Ball" -> {"InterpolatedBall"}|>, 
+       "LayoutOptions" -> <|
+        "PlotRange" -> {{1, 18}, {0., 0.021354166666666667`}}, 
+         "Frame" -> {{False, False}, {False, False}}, 
+         "AxesOrigin" -> {1.0000000000000022`, 0}, 
+         "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, 
+         "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), 
+         "DefaultStyle" -> {
+           Directive[
+            Opacity[1.], 
+            AbsoluteThickness[2], 
+            RGBColor[1, 0, 0], 
+            Thickness[0.002]]}, 
+         "HighlightLabelingFunctions" -> <|"CoordinatesToolOptions" -> ({
+             Identity[
+              Part[#, 1]], 
+             Identity[
+              Part[#, 2]]}& ), 
+           "ScalingFunctions" -> {{Identity, Identity}, {
+             Identity, Identity}}|>, "Primitives" -> {}, "GCFlag" -> False|>, 
+       "Meta" -> <|
+        "DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> 
+         Plot, "GroupHighlight" -> False|>|>, "DynamicHighlight"]]},
+   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+   Axes->{True, True},
+   AxesLabel->{
+     FormBox[
+      TagBox["\"Log2(trials)\"", HoldForm], TraditionalForm], 
+     FormBox[
+      TagBox["\"P(Win)\"", HoldForm], TraditionalForm]},
+   AxesOrigin->{0, 0},
+   DisplayFunction->Identity,
+   Frame->{{False, False}, {False, False}},
+   FrameLabel->{{None, None}, {None, None}},
+   FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+   GridLines->{None, None},
+   GridLinesStyle->Directive[
+     GrayLevel[0.5, 0.4]],
+   Method->{
+    "AxisPadding" -> Scaled[0.02], "DefaultBoundaryStyle" -> Automatic, 
+     "DefaultGraphicsInteraction" -> {
+      "Version" -> 1.2, "TrackMousePosition" -> {True, False}, 
+       "Effects" -> {
+        "Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, 
+         "Droplines" -> {
+          "freeformCursorMode" -> True, 
+           "placement" -> {"x" -> "All", "y" -> "None"}}}}, 
+     "DefaultMeshStyle" -> AbsolutePointSize[6], "DefaultPlotStyle" -> {
+       Directive[
+        RGBColor[0.368417, 0.506779, 0.709798], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.880722, 0.611041, 0.142051], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.560181, 0.691569, 0.194885], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.922526, 0.385626, 0.209179], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.528488, 0.470624, 0.701351], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.772079, 0.431554, 0.102387], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.363898, 0.618501, 0.782349], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[1, 0.75, 0], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.647624, 0.37816, 0.614037], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.571589, 0.586483, 0.], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.915, 0.3325, 0.2125], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.40082222609352647`, 0.5220066643438841, 0.85], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.9728288904374106, 0.621644452187053, 0.07336199581899142], 
+        
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.736782672705901, 0.358, 0.5030266573755369], 
+        AbsoluteThickness[2]], 
+       Directive[
+        RGBColor[0.28026441037696703`, 0.715, 0.4292089322474965], 
+        AbsoluteThickness[2]]}, "DomainPadding" -> Scaled[0.02], 
+     "PointSizeFunction" -> "SmallPointSize", "RangePadding" -> Scaled[0.05], 
+     "OptimizePlotMarkers" -> True, "IncludeHighlighting" -> "CurrentSet", 
+     "HighlightStyle" -> Automatic, "OptimizePlotMarkers" -> True, 
+     "CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+         Identity[
+          Part[#, 1]], 
+         Identity[
+          Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+         Identity[
+          Part[#, 1]], 
+         Identity[
+          Part[#, 2]]}& )}},
+   PlotRange->{{0, 18.}, {0, 0.03125}},
+   PlotRangeClipping->True,
+   PlotRangePadding->{{
+      Scaled[0.02], 
+      Scaled[0.02]}, {
+      Scaled[0.02], 
+      Scaled[0.05]}},
+   Ticks->{Automatic, Automatic}]], "Output",ExpressionUUID->
+  "4cce76c5-5d95-4bd2-9ecc-49658f277605"],
+ "\nAs can be seen by the plots in Task 4 that with increasing number of \
+trials we get an increasingly accurate probability estimation, As expected by \
+a Monte Carlo simulation.\n"
+}], "Text",
+ CellChangeTimes->{{3.903164340257909*^9, 3.9031643745559387`*^9}, {
+  3.903164406219371*^9, 3.903164449710731*^9}, {3.903164948658251*^9, 
+  3.903165018033087*^9}},ExpressionUUID->"80d853e7-85c8-4ce2-8129-\
+72462e5b418b"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Task 5", "Subsection",
+ CellChangeTimes->{{3.903164553198578*^9, 
+  3.903164556846614*^9}},ExpressionUUID->"02316a1c-2a78-4e2a-9c3a-\
+403f551193d5"],
+
+Cell[TextData[{
+ "The Monte Carlo principle can be described as:\n\tIf ",
+ Cell[BoxData[
+  FormBox["N", TraditionalForm]],ExpressionUUID->
+  "18e9f405-cf9e-4f85-a82a-7fae43d7c850"],
+ " is the size of the sample space, number of simulations, and ",
+ Cell[BoxData[
+  FormBox["m", TraditionalForm]],ExpressionUUID->
+  "2e314e3a-08fb-4d81-83ed-35bf2645b082"],
+ " is the \tnumber of simulations that satisfy a certain condition C. And if \
+we know \tthe true probability of C. Then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"P", "(", "C", ")"}], "\[TildeTilde]", " ", 
+    RowBox[{"m", "/", "N"}]}], TraditionalForm]],ExpressionUUID->
+  "5ed5fb26-1e5e-4dcb-8056-cc0fc8321db4"],
+ " and if ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"N", "->", "\[Infinity]"}], TraditionalForm]],ExpressionUUID->
+  "4c69e88f-f731-4d99-8e01-171070df3bb2"],
+ " then ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\t", 
+    RowBox[{
+     RowBox[{"P", "(", "C", ")"}], "=", 
+     RowBox[{"m", "/", "N"}]}]}], TraditionalForm]],ExpressionUUID->
+  "4c51d3b5-fee9-469b-8bed-714b29475f97"],
  ".\n\nThe relative error value can be described as: ",
  Cell[BoxData[
   FormBox[
@@ -1560,15 +2725,13 @@ know the true probability of C. Then ",
       RowBox[{"P", "(", "C", ")"}], " ", "-", 
       RowBox[{"m", "/", "N"}]}], "|", " ", 
      RowBox[{"/", " ", 
-      RowBox[{"P", "(", "C", ")"}]}]}]}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "dc3988cf-f86f-4446-9a65-320d006392f5"],
+      RowBox[{"P", "(", "C", ")"}]}]}]}], TraditionalForm]],ExpressionUUID->
+  "5547835d-2051-4561-980d-fb39114b6948"],
  ". This implies that if ",
  Cell[BoxData[
   FormBox[
-   RowBox[{"N", "->", "\[Infinity]"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "2c41cb78-d029-414e-b2bd-ec2a0b78977b"],
+   RowBox[{"N", "->", "\[Infinity]"}], TraditionalForm]],ExpressionUUID->
+  "8b604e68-e45c-42a9-a524-967de327f13a"],
  " then ",
  Cell[BoxData[
   FormBox[
@@ -1580,9 +2743,8 @@ know the true probability of C. Then ",
        RowBox[{"P", "(", "C", ")"}]}], "|", 
       RowBox[{"/", 
        RowBox[{"P", "(", "C", ")"}]}]}], "=", "0"}]}], TraditionalForm]],
-  InitializationCell->True,
-  FormatType->TraditionalForm,ExpressionUUID->
-  "94bb2b1a-9361-4397-8560-b5c93b7e2225"],
+  InitializationCell->True,ExpressionUUID->
+  "7c1be44f-9c2f-40aa-bd66-c4eaec76a0dc"],
  ". Thus the relative error decreases as the number of simulations increases. \
 \n\nTo find an exact number of trials which will satisfy that the relative \
 error is less than 10% is impossible, the number of trials will vary since \
@@ -1591,15 +2753,14 @@ the trials are random. Only scenario where you can guarantee it is less than \
  Cell[BoxData[
   FormBox[
    RowBox[{"N", "->", "\[Infinity]"}], TraditionalForm]],
-  InitializationCell->True,
-  FormatType->TraditionalForm,ExpressionUUID->
-  "95993a6d-53f9-4ae1-879b-97b14ce20a65"],
+  InitializationCell->True,ExpressionUUID->
+  "497e999d-6df2-4c03-8d34-4b567ccfe7a1"],
  ". However we can try to find the number of trials which will with high \
 probability give us a relative error rate that is less than 10%.\n\nWe \
 approximated the on average number of trials required to satisfy the error \
 rate condition, that number is 2228. This tells us that on average across \
 multiple Monte Carlo simulations, it will require about 2228 trials to get an \
-error rate condition less than 10%.  \n\nThe we approximated the \
+error rate condition less than 10%.  \n\nThen we approximated the \
 probabilities of a relative error rate of less than 10% for different number \
 of trials. Below are the results: \n",
  Cell[BoxData[
@@ -1662,335 +2823,24 @@ of trials. Below are the results: \n",
   CellChangeTimes->{
    3.9030821352698793`*^9, 3.9030823274869013`*^9, {3.903082479601362*^9, 
     3.903082484980245*^9}},ExpressionUUID->
-  "0f84d74f-0e03-4e38-b197-d9a2e75c5545"],
+  "dcc1841f-70fe-487d-8e46-b1b8f6fc6dcd"],
  "\n\nAs we can see the on average 2228 trials required before a Monte Carlo \
 simulation has a relative error rate of less than 10% has a quite poor \
 probability of having an error rate of less than 10% at 41%. The number of \
 required trials to get a satisfying error rate with high probability (",
  Cell[BoxData[
   FormBox[
-   RowBox[{">=", "99"}], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "86eb9113-374e-4308-816f-d61a5ea17082"],
+   RowBox[{">=", "99"}], TraditionalForm]],ExpressionUUID->
+  "c516f5ce-5f27-4afe-ad9e-7ef5061407fd"],
  "%) is 46080, which is interesting since that is the number of possible \
 outcomes when throwing 5 platonic solids."
 }], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7769556995131397`*^9, 3.776955764924737*^9}, {
-   3.7769558026027794`*^9, 3.7769558277286415`*^9}, {3.7769558692790627`*^9, 
-   3.776956004892793*^9}, {3.7769560739302015`*^9, 3.776956074708269*^9}, {
-   3.7769561259319*^9, 3.776956186456003*^9}, {3.7769562280216913`*^9, 
-   3.776956355351681*^9}, {3.776956426274366*^9, 3.7769566034903727`*^9}, 
-   3.776956669599334*^9, {3.776956721762931*^9, 3.7769568877450266`*^9}, {
-   3.776964804886778*^9, 3.776964808729353*^9}, {3.776965075945921*^9, 
-   3.7769650770714192`*^9}, {3.776965238389321*^9, 3.7769652867091885`*^9}, {
-   3.776965322391895*^9, 3.7769654002767076`*^9}, {3.776965441663559*^9, 
-   3.776965476142866*^9}, {3.776965506362092*^9, 3.776965579854154*^9}, {
-   3.7769656188628044`*^9, 3.7769656476973495`*^9}, {3.7769656929899225`*^9, 
-   3.776965717767578*^9}, {3.776965748855176*^9, 3.776965752118764*^9}, {
-   3.776966053686802*^9, 3.7769661893428483`*^9}, {3.7769662249698143`*^9, 
-   3.7769662538076563`*^9}, {3.776966288963253*^9, 3.7769664170111666`*^9}, {
-   3.776966483367133*^9, 3.7769664850147285`*^9}, {3.776966530554881*^9, 
-   3.776966556467556*^9}, {3.7769667085151277`*^9, 3.7769667864299436`*^9}, {
-   3.7769668244542074`*^9, 3.776966851930696*^9}, {3.7769669219403515`*^9, 
-   3.7769669850780067`*^9}, {3.7769670280071507`*^9, 3.776967029445303*^9}, {
-   3.7772213382330065`*^9, 3.777221401470441*^9}, {3.7772221071153374`*^9, 
-   3.777222361677754*^9}, 3.902838157785902*^9, {3.902980182484213*^9, 
-   3.902980185618525*^9}, {3.902980268785904*^9, 3.902980303881567*^9}, {
-   3.90298034466263*^9, 3.9029804604944077`*^9}, 3.902980720434923*^9, {
-   3.9029808195240307`*^9, 3.90298082105271*^9}, {3.90298087397423*^9, 
-   3.902980919365486*^9}, {3.902980965313325*^9, 3.9029809679221573`*^9}, 
-   3.903083876826473*^9, 3.90308398827251*^9, 3.903084018785603*^9, {
-   3.9030841067877274`*^9, 3.90308449278174*^9}, {3.903084537361545*^9, 
-   3.903084873900758*^9}, {3.903084919162099*^9, 3.903085286231724*^9}, {
-   3.9030853288382196`*^9, 3.903085567408803*^9}, {3.903085691668981*^9, 
-   3.903086006232938*^9}, {3.903086041633306*^9, 
-   3.903086171838311*^9}},ExpressionUUID->"33a0c63e-0920-444c-9f27-\
-22a48c9a1a69"]
-}, Open  ]]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Method", "Section",
- CellChangeTimes->{{3.776968639430567*^9, 3.7769686456678753`*^9}, {
-  3.903084590754945*^9, 
-  3.90308459322921*^9}},ExpressionUUID->"6943093f-8a76-4b29-9b2d-\
-76d8c3875b28"],
-
-Cell[CellGroupData[{
-
-Cell["Task 1: Determine the probability function of S", "Subsection",
- CellChangeTimes->{{3.77696866259708*^9, 3.7769686705079107`*^9}, 
-   3.902824160742794*^9, {3.902827344627631*^9, 
-   3.902827347865378*^9}},ExpressionUUID->"7e65a304-4725-4568-8fa8-\
-1b4ca87c4741"],
-
-Cell["\<\
-We will first define the probability distributions for each of the Platonic \
-Solids. We will assume that each die is fair, meaning that each outcome is \
-equally likely. Here are the probability distributions for each die:\
-\>", "Text",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-  3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-  3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-  3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-  3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-  3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-  3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-  3.902825721136454*^9, 
-  3.902825723360231*^9}},ExpressionUUID->"9a82b38d-63ee-4be8-b68f-\
-d4eb0071d4ff"],
-
-Cell[TextData[{
- "Tetrahedron (4-sided die)\n\t",
- StyleBox["Probability of each outcome (1 to 4) is 1/4.",
-  FontSize->13]
-}], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
-   3.902825361004925*^9}, 
-   3.9028257429699707`*^9},ExpressionUUID->"827d86c0-150a-43d6-b01b-\
-376829f6f38c"],
-
-Cell[TextData[{
- "Hexahedron (6-sided die)\n\t",
- StyleBox["Probability of each outcome (1 to 6) is 1/6.",
-  FontSize->13]
-}], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
-   3.902825361004925*^9}, {3.9028254879390717`*^9, 3.9028255047932777`*^9}, 
-   3.9028257440257607`*^9},ExpressionUUID->"05116754-3c71-407f-bd7f-\
-1d47c4201905"],
-
-Cell[TextData[{
- "Octahedron (8-sided die)\n\t",
- StyleBox["Probability of each outcome (1 to 8) is 1/8.",
-  FontSize->13]
-}], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
-   3.902825361004925*^9}, {3.902825535082329*^9, 3.902825545392989*^9}, 
-   3.902825745182116*^9},ExpressionUUID->"89f5e765-d78f-49c7-8d93-\
-bcb3614209ee"],
-
-Cell[TextData[{
- "Dodecahedron (12-sided die)\n\t",
- StyleBox["Probability of each outcome (1 to 12) is 1/12.",
-  FontSize->13]
-}], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
-   3.902825361004925*^9}, {3.902825563454699*^9, 3.902825576558172*^9}, 
-   3.902825746357998*^9},ExpressionUUID->"2c89aacd-b43a-4e15-b556-\
-6b6f8ff9ea35"],
-
-Cell[TextData[{
- "Icosahedron (20-sided die)\n\t",
- StyleBox["Probability of each outcome (1 to 20) is 1/20.",
-  FontSize->13]
-}], "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.7772167520450516`*^9, 3.777216754178838*^9}, {
-   3.7772171323927097`*^9, 3.777217149221651*^9}, {3.7772173494221134`*^9, 
-   3.7772173680101676`*^9}, {3.7772186796485558`*^9, 3.777218686769244*^9}, {
-   3.7772218693097486`*^9, 3.7772220082693443`*^9}, {3.902824182704595*^9, 
-   3.902824206176258*^9}, {3.902824316996603*^9, 3.902824317537992*^9}, {
-   3.902824811015699*^9, 3.902824811352695*^9}, {3.902824862909687*^9, 
-   3.902824863255251*^9}, {3.902824914738803*^9, 3.9028249219860973`*^9}, {
-   3.902825099602593*^9, 3.902825120890107*^9}, {3.902825354043047*^9, 
-   3.902825361004925*^9}, {3.9028255877333384`*^9, 3.902825594974588*^9}, 
-   3.902825747863851*^9},ExpressionUUID->"142818a5-c84a-46ca-bd7a-\
-b1e5d7b504df"],
-
-Cell["\<\
-Now, we can calculate the convolution of these probability distributions to \
-find the probability distribution of the sum S.\
-\>", "Text",
- CellChangeTimes->{{3.902825706546227*^9, 3.902825714184568*^9}, 
-   3.902825764930689*^9, {3.902825860094575*^9, 
-   3.9028258604887342`*^9}},ExpressionUUID->"c60e4ea6-b4ab-403e-9dec-\
-8ef0a424d199"]
+ CellChangeTimes->{{3.903164568584922*^9, 3.903164593362715*^9}, {
+  3.903164698626067*^9, 
+  3.90316471589787*^9}},ExpressionUUID->"1b11a080-c6bf-4dda-b2db-\
+e7e1020e2216"]
+}, Closed]]
 }, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["Task 2: Determine the probability of winning the game", "Subsection",
- CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, 
-   3.902827412802197*^9},ExpressionUUID->"1db48066-a568-4f09-a9b7-\
-7f37a8e3983c"],
-
-Cell["\<\
-To determine the probability of winning the game, we need to sum the \
-probabilities of all values of S where S <= 10 or S >= 45.\
-\>", "Text",
- CellChangeTimes->{{3.776968872425674*^9, 3.776968878496433*^9}, 
-   3.777219770827114*^9, {3.7772198325744534`*^9, 3.7772199770952053`*^9}, {
-   3.777220021784422*^9, 3.7772200330739594`*^9}, 3.7772200721755147`*^9, {
-   3.777220138561649*^9, 3.7772201459992766`*^9}, {3.7772201808057384`*^9, 
-   3.7772202041251707`*^9}, 
-   3.9028274325923777`*^9},ExpressionUUID->"cb999855-5bce-427b-835c-\
-9314afc05b4c"]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Task 3: Obtain the probability of winning the game with 1000 trials (Monte \
-Carlo simulation)\
-\>", "Subsection",
- CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
-  3.7769689193598886`*^9, 3.7769689370694237`*^9}, {3.902830511189522*^9, 
-  3.902830515469439*^9}},ExpressionUUID->"8a6b3a02-52c4-4900-aa72-\
-13105a1716f8"],
-
-Cell["\<\
-In this task, we will simulate throwing the five Platonic Solid dice 1000 \
-times and calculate the proportion of simulations where we win. The steps are \
-as follows:\
-\>", "Text",
- CellChangeTimes->{{3.7772211083183427`*^9, 3.7772211130540495`*^9}, {
-   3.7772212161572037`*^9, 3.777221216513251*^9}, {3.7772233323715982`*^9, 
-   3.7772233759150677`*^9}, {3.7772234149602013`*^9, 
-   3.7772235172677965`*^9}, {3.777223556862294*^9, 3.777223707491474*^9}, {
-   3.902831105095085*^9, 3.902831148596355*^9}, 3.902831256645185*^9, {
-   3.902831372293313*^9, 
-   3.902831372943625*^9}},ExpressionUUID->"5456827d-1f6f-41f4-a360-\
-f28a057a69c4"],
-
-Cell["\<\
-Simulate rolling each of the five dice in each trial and calculate the sum S \
-for each trial.\
-\>", "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.9028313076255207`*^9, 
-  3.902831325039919*^9}},ExpressionUUID->"791fbfc0-2639-4b95-8ce9-\
-a43ddae15f87"],
-
-Cell["\<\
-Count the number of trials where S satisfies the winning condition (S <= 10 \
-or S >= 45).\
-\>", "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.9028313076255207`*^9, 3.902831325039919*^9}, 
-   3.902831359596208*^9},ExpressionUUID->"a233a485-2691-413e-8144-\
-bdc44d0dab0a"],
-
-Cell["\<\
-Calculate the probability of winning as the ratio of the number of winning \
-trials to the total number of trials (1000 in this case).\
-\>", "Text",
- CellDingbat->"\[FilledSmallCircle]",
- CellChangeTimes->{{3.9028313076255207`*^9, 3.902831325039919*^9}, 
-   3.902831366583123*^9},ExpressionUUID->"5e1fbcfa-9b3b-4deb-b943-\
-41ef048e0ce0"]
-}, Closed]],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Task 4: Discuss how the probability changes with the number of trials and \
-provide a figure.\
-\>", "Subsection",
- CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
-   3.776968950644105*^9, 3.7769689792296224`*^9}, {3.777224905807621*^9, 
-   3.77722491149018*^9}, {3.902831402929357*^9, 3.902831406390788*^9}, 
-   3.9028315034231577`*^9},ExpressionUUID->"73766100-8bcb-47fa-93f0-\
-67c723ac4e02"],
-
-Cell[TextData[{
- "To observe how the probability changes with the number of trials, we can \
-perform the simulation for various numbers of trials, ranging from a small \
-number, 2, to a large number, ",
- Cell[BoxData[
-  FormBox[
-   SuperscriptBox["2", "18"], TraditionalForm]],
-  FormatType->TraditionalForm,ExpressionUUID->
-  "f00bedb2-0161-4662-b2d2-1e603e12fa11"],
- ". Then we can create a plot to visualize this change.\n\n"
-}], "Text",
- CellChangeTimes->{{3.777221488439082*^9, 3.7772215098326426`*^9}, 
-   3.77722589721934*^9, 3.7772259585184555`*^9, {3.90283154736926*^9, 
-   3.902831559766138*^9}, {3.902831618713277*^9, 3.902831633443609*^9}, {
-   3.902831670692214*^9, 3.902831738374301*^9}, {3.902831776128661*^9, 
-   3.902831827617818*^9}, {3.903015606343207*^9, 3.9030156494838*^9}, {
-   3.903015683063308*^9, 3.9030156905756474`*^9}, 3.903015726652512*^9, {
-   3.903018275903961*^9, 3.903018334847601*^9}, 
-   3.9030832194615393`*^9},ExpressionUUID->"f45f8247-fb87-407a-add7-\
-181f3afab2e7"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["\<\
-Task 5: Determine the number of trials needed to keep the relative error \
-below 10%. Provide reasoning.\
-\>", "Subsection",
- CellChangeTimes->{{3.7769686751205697`*^9, 3.776968720943965*^9}, {
-   3.776968950644105*^9, 3.7769689792296224`*^9}, {3.777224905807621*^9, 
-   3.77722491149018*^9}, {3.902831402929357*^9, 3.902831406390788*^9}, 
-   3.9028315034231577`*^9, {3.90283185754329*^9, 3.902831857715784*^9}, 
-   3.9028319304901752`*^9},ExpressionUUID->"f4cf7edc-3d0d-4d8e-84d8-\
-2f421e768568"],
-
-Cell["\<\
-To determine the number of trials needed to achieve a relative error value \
-below 10% between the exact probability and the simulation probability, we \
-can perform Monte Carlo simulations with increasing numbers of trials until \
-we get a relative error value that is less than 10%. Since the simulation \
-result can vary, the aforementioned test  is repeated a number of times so \
-that we calculate the average number of trials required to get a relative \
-error value that is less than 10%. 
-
-We also analyze the probability of getting an error value less than 10% for \
-different number of trials, this is done by picking a trial number to use for \
-the Monte Carlo simulation and then repeating the simulation a certain amount \
-of times while keeping track of the number of simulation that satisfies our \
-condition. By doing this we approximate the probability of the a relative \
-error rate of less than 10% for different number of trials.\
-\>", "Text",
- CellChangeTimes->{{3.777221488439082*^9, 3.7772215098326426`*^9}, 
-   3.77722589721934*^9, 3.7772259585184555`*^9, {3.90283154736926*^9, 
-   3.902831559766138*^9}, {3.902831618713277*^9, 3.902831633443609*^9}, {
-   3.902831670692214*^9, 3.902831738374301*^9}, {3.902831776128661*^9, 
-   3.902831827617818*^9}, {3.902831914487232*^9, 3.90283195893148*^9}, {
-   3.902832083616901*^9, 3.9028320858198347`*^9}, {3.90307858616523*^9, 
-   3.903078643247258*^9}, {3.903078721166388*^9, 3.9030787893789597`*^9}, {
-   3.9030831806962347`*^9, 3.9030831868248158`*^9}, {3.9030832567049837`*^9, 
-   3.903083743547783*^9}, {3.903083778605969*^9, 
-   3.903083815157011*^9}},ExpressionUUID->"74585d98-686d-478b-bb23-\
-0e535764c932"]
-}, Open  ]]
-}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -4141,132 +4991,148 @@ Cell[CellGroupData[{
 Cell[1520, 50, 247, 5, 109, "Subchapter",ExpressionUUID->"2760ab7a-2fed-4ae4-a63f-890119ad5062"],
 Cell[CellGroupData[{
 Cell[1792, 59, 177, 3, 70, "Section",ExpressionUUID->"28ab532a-4f99-4328-b494-a8a51a0e3e70"],
+Cell[1972, 64, 29263, 517, 521, "Text",ExpressionUUID->"8ad5d4da-afa2-434b-a402-a9f9b705fa59"]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[1994, 66, 81, 0, 48, "Subsection",ExpressionUUID->"4df8543c-22f8-401d-8973-c66d5fa62864"],
-Cell[2078, 68, 28744, 501, 562, "Text",ExpressionUUID->"8ad5d4da-afa2-434b-a402-a9f9b705fa59"]
-}, Open  ]],
+Cell[31272, 586, 201, 4, 54, "Section",ExpressionUUID->"6943093f-8a76-4b29-9b2d-76d8c3875b28"],
 Cell[CellGroupData[{
-Cell[30859, 574, 83, 0, 48, "Subsection",ExpressionUUID->"39a0ef6c-6a2c-4081-9062-84513a76c571"],
-Cell[30945, 576, 4988, 145, 1343, "Text",ExpressionUUID->"1bf59983-7c21-4d19-805a-0068e3a1cdc7"],
-Cell[35936, 723, 2032, 32, 59, "Text",ExpressionUUID->"e957b738-d831-4901-9811-eaef107cce85"],
-Cell[37971, 757, 2101, 34, 59, "Text",ExpressionUUID->"a447b94f-a52d-42ba-9c7e-b05119c27a77"],
-Cell[40075, 793, 33114, 723, 936, "Text",ExpressionUUID->"425146fc-3d16-4609-9ab0-a6d9eb45f6b7"],
-Cell[73192, 1518, 7904, 190, 937, "Text",ExpressionUUID->"33a0c63e-0920-444c-9f27-22a48c9a1a69"]
+Cell[31498, 594, 269, 4, 48, "Subsection",ExpressionUUID->"7e65a304-4725-4568-8fa8-1b4ca87c4741"],
+Cell[31770, 600, 870, 14, 83, "Text",ExpressionUUID->"9a82b38d-63ee-4be8-b68f-d4eb0071d4ff"],
+Cell[32643, 616, 878, 16, 59, "Text",ExpressionUUID->"827d86c0-150a-43d6-b01b-376829f6f38c"],
+Cell[33524, 634, 927, 16, 59, "Text",ExpressionUUID->"05116754-3c71-407f-bd7f-1d47c4201905"],
+Cell[34454, 652, 921, 16, 59, "Text",ExpressionUUID->"89f5e765-d78f-49c7-8d93-bcb3614209ee"],
+Cell[35378, 670, 926, 16, 59, "Text",ExpressionUUID->"2c89aacd-b43a-4e15-b556-6b6f8ff9ea35"],
+Cell[36307, 688, 927, 16, 59, "Text",ExpressionUUID->"142818a5-c84a-46ca-bd7a-b1e5d7b504df"],
+Cell[37237, 706, 350, 7, 59, "Text",ExpressionUUID->"c60e4ea6-b4ab-403e-9dec-8ef0a424d199"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[37624, 718, 226, 3, 38, "Subsection",ExpressionUUID->"1db48066-a568-4f09-a9b7-7f37a8e3983c"],
+Cell[37853, 723, 562, 10, 59, "Text",ExpressionUUID->"cb999855-5bce-427b-835c-9314afc05b4c"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[38452, 738, 351, 7, 65, "Subsection",ExpressionUUID->"8a6b3a02-52c4-4900-aa72-13105a1716f8"],
+Cell[38806, 747, 650, 12, 83, "Text",ExpressionUUID->"5456827d-1f6f-41f4-a360-f28a057a69c4"],
+Cell[39459, 761, 284, 7, 59, "Text",ExpressionUUID->"791fbfc0-2639-4b95-8ce9-a43ddae15f87"],
+Cell[39746, 770, 303, 7, 59, "Text",ExpressionUUID->"a233a485-2691-413e-8144-bdc44d0dab0a"],
+Cell[40052, 779, 347, 7, 59, "Text",ExpressionUUID->"5e1fbcfa-9b3b-4deb-b943-41ef048e0ce0"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[40436, 791, 423, 8, 65, "Subsection",ExpressionUUID->"73766100-8bcb-47fa-93f0-67c723ac4e02"],
+Cell[40862, 801, 1020, 19, 106, "Text",ExpressionUUID->"f45f8247-fb87-407a-add7-181f3afab2e7"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[41919, 825, 507, 9, 65, "Subsection",ExpressionUUID->"f4cf7edc-3d0d-4d8e-84d8-2f421e768568"],
+Cell[42429, 836, 1748, 27, 339, "Text",ExpressionUUID->"74585d98-686d-478b-bb23-0e535764c932"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[44226, 869, 80, 0, 54, "Section",ExpressionUUID->"8653cf74-40b5-4cd0-9bec-547770821df5"],
+Cell[44309, 871, 4988, 145, 1343, "Text",ExpressionUUID->"ea8e35dc-ae66-4a25-8f60-15c70362c36a"],
+Cell[49300, 1018, 2032, 32, 59, "Text",ExpressionUUID->"09d75b6d-d703-4846-8962-538093b983da"],
+Cell[51335, 1052, 2101, 34, 59, "Text",ExpressionUUID->"867c384f-ea9a-4482-bcad-1686a5a121f0"],
+Cell[53439, 1088, 31775, 693, 586, "Text",ExpressionUUID->"7f446376-4c9b-43f2-a10f-678c72cb0e3a"],
+Cell[85217, 1783, 4331, 100, 349, "Text",ExpressionUUID->"9af4fb7c-68ac-4da0-8f60-4ffa102eebef"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[89585, 1888, 157, 3, 54, "Section",ExpressionUUID->"aa835639-0a53-431e-9287-5cf2ce5a12a0"],
+Cell[CellGroupData[{
+Cell[89767, 1895, 154, 3, 48, "Subsection",ExpressionUUID->"dc742a4d-e51f-46f4-bcf2-38c366316189"],
+Cell[89924, 1900, 1376, 39, 126, "Text",ExpressionUUID->"ca50d1d2-05da-4a3a-b9b6-d4151985c9c1"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[91337, 1944, 156, 3, 38, "Subsection",ExpressionUUID->"14231526-6f58-4fe2-8485-f01b88e47bfa"],
+Cell[91496, 1949, 1402, 38, 152, "Text",ExpressionUUID->"44c2f059-02d7-438e-8702-8ce977c395df"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[92935, 1992, 209, 4, 38, "Subsection",ExpressionUUID->"3bdc868f-a78d-44b7-9275-bca802b72d83"],
+Cell[93147, 1998, 30476, 680, 841, "Text",ExpressionUUID->"80d853e7-85c8-4ce2-8129-72462e5b418b"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[123660, 2683, 154, 3, 38, "Subsection",ExpressionUUID->"02316a1c-2a78-4e2a-9c3a-403f551193d5"],
+Cell[123817, 2688, 5436, 152, 867, "Text",ExpressionUUID->"1b11a080-c6bf-4dda-b2db-e7e1020e2216"]
+}, Closed]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[129302, 2846, 202, 4, 54, "Section",ExpressionUUID->"1b116d42-d9b2-4b2c-b557-c3d14784fcbb"],
+Cell[CellGroupData[{
+Cell[129529, 2854, 245, 4, 48, "Subsection",ExpressionUUID->"f17d3568-f9c6-4ab3-aca5-a46afb19a1cc"],
+Cell[129777, 2860, 718, 10, 36, "Text",ExpressionUUID->"514d1b59-e246-4b60-8d3b-260fa3b2d24e"],
+Cell[130498, 2872, 1350, 39, 140, "Input",ExpressionUUID->"08cf3dee-8df8-4659-8b0a-00cf76eaa452"],
+Cell[131851, 2913, 859, 13, 33, "Text",ExpressionUUID->"654c5abb-a8e5-414b-9a0a-6319f349e5b0"],
+Cell[132713, 2928, 1487, 37, 279, "Input",ExpressionUUID->"37891955-7e9c-48ea-9b2a-a9414e9c749d"],
+Cell[134203, 2967, 888, 14, 33, "Text",ExpressionUUID->"e8395bc1-fdef-4d59-a656-a1e33710a275"],
+Cell[135094, 2983, 580, 15, 49, "Input",ExpressionUUID->"73e8ce4d-7318-4ace-94cc-e0e62e27e02a"],
+Cell[135677, 3000, 857, 13, 33, "Text",ExpressionUUID->"f4813469-5f1c-4c09-be6a-0a76680eb696"],
+Cell[CellGroupData[{
+Cell[136559, 3017, 644, 14, 73, "Input",ExpressionUUID->"1bac49b0-83de-4653-a0e8-673312c9d160"],
+Cell[137206, 3033, 3195, 120, 1295, "Output",ExpressionUUID->"03665931-22c8-45e9-903f-80b853c0fd1a"]
 }, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[81145, 1714, 201, 4, 70, "Section",ExpressionUUID->"6943093f-8a76-4b29-9b2d-76d8c3875b28"],
-Cell[CellGroupData[{
-Cell[81371, 1722, 269, 4, 48, "Subsection",ExpressionUUID->"7e65a304-4725-4568-8fa8-1b4ca87c4741"],
-Cell[81643, 1728, 870, 14, 83, "Text",ExpressionUUID->"9a82b38d-63ee-4be8-b68f-d4eb0071d4ff"],
-Cell[82516, 1744, 878, 16, 59, "Text",ExpressionUUID->"827d86c0-150a-43d6-b01b-376829f6f38c"],
-Cell[83397, 1762, 927, 16, 59, "Text",ExpressionUUID->"05116754-3c71-407f-bd7f-1d47c4201905"],
-Cell[84327, 1780, 921, 16, 59, "Text",ExpressionUUID->"89f5e765-d78f-49c7-8d93-bcb3614209ee"],
-Cell[85251, 1798, 926, 16, 59, "Text",ExpressionUUID->"2c89aacd-b43a-4e15-b556-6b6f8ff9ea35"],
-Cell[86180, 1816, 927, 16, 59, "Text",ExpressionUUID->"142818a5-c84a-46ca-bd7a-b1e5d7b504df"],
-Cell[87110, 1834, 350, 7, 59, "Text",ExpressionUUID->"c60e4ea6-b4ab-403e-9dec-8ef0a424d199"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[87497, 1846, 226, 3, 38, "Subsection",ExpressionUUID->"1db48066-a568-4f09-a9b7-7f37a8e3983c"],
-Cell[87726, 1851, 562, 10, 57, "Text",ExpressionUUID->"cb999855-5bce-427b-835c-9314afc05b4c"]
-}, Closed]],
+Cell[140450, 3159, 226, 3, 38, "Subsection",ExpressionUUID->"285ac0c6-ce38-4993-8133-5403d6ffda6f"],
+Cell[140679, 3164, 470, 7, 36, "Text",ExpressionUUID->"bd70a5a8-bb22-4f5e-a8f9-30c7aab938e0"],
+Cell[141152, 3173, 713, 20, 73, "Input",ExpressionUUID->"11c2193f-2087-4cf7-aca5-86761bde284f"],
+Cell[141868, 3195, 367, 9, 59, "Text",ExpressionUUID->"1a14b4b3-ac84-47d2-836f-a8689a66e01f"],
 Cell[CellGroupData[{
-Cell[88325, 1866, 351, 7, 65, "Subsection",ExpressionUUID->"8a6b3a02-52c4-4900-aa72-13105a1716f8"],
-Cell[88679, 1875, 650, 12, 57, "Text",ExpressionUUID->"5456827d-1f6f-41f4-a360-f28a057a69c4"],
-Cell[89332, 1889, 284, 7, 35, "Text",ExpressionUUID->"791fbfc0-2639-4b95-8ce9-a43ddae15f87"],
-Cell[89619, 1898, 303, 7, 35, "Text",ExpressionUUID->"a233a485-2691-413e-8144-bdc44d0dab0a"],
-Cell[89925, 1907, 347, 7, 57, "Text",ExpressionUUID->"5e1fbcfa-9b3b-4deb-b943-41ef048e0ce0"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[90309, 1919, 423, 8, 65, "Subsection",ExpressionUUID->"73766100-8bcb-47fa-93f0-67c723ac4e02"],
-Cell[90735, 1929, 1005, 19, 153, "Text",ExpressionUUID->"f45f8247-fb87-407a-add7-181f3afab2e7"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[91777, 1953, 507, 9, 75, "Subsection",ExpressionUUID->"f4cf7edc-3d0d-4d8e-84d8-2f421e768568"],
-Cell[92287, 1964, 1692, 26, 339, "Text",ExpressionUUID->"74585d98-686d-478b-bb23-0e535764c932"]
-}, Open  ]]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[94028, 1996, 202, 4, 70, "Section",ExpressionUUID->"1b116d42-d9b2-4b2c-b557-c3d14784fcbb"],
-Cell[CellGroupData[{
-Cell[94255, 2004, 245, 4, 48, "Subsection",ExpressionUUID->"f17d3568-f9c6-4ab3-aca5-a46afb19a1cc"],
-Cell[94503, 2010, 718, 10, 36, "Text",ExpressionUUID->"514d1b59-e246-4b60-8d3b-260fa3b2d24e"],
-Cell[95224, 2022, 1350, 39, 140, "Input",ExpressionUUID->"08cf3dee-8df8-4659-8b0a-00cf76eaa452"],
-Cell[96577, 2063, 859, 13, 33, "Text",ExpressionUUID->"654c5abb-a8e5-414b-9a0a-6319f349e5b0"],
-Cell[97439, 2078, 1487, 37, 279, "Input",ExpressionUUID->"37891955-7e9c-48ea-9b2a-a9414e9c749d"],
-Cell[98929, 2117, 888, 14, 33, "Text",ExpressionUUID->"e8395bc1-fdef-4d59-a656-a1e33710a275"],
-Cell[99820, 2133, 580, 15, 49, "Input",ExpressionUUID->"73e8ce4d-7318-4ace-94cc-e0e62e27e02a"],
-Cell[100403, 2150, 857, 13, 33, "Text",ExpressionUUID->"f4813469-5f1c-4c09-be6a-0a76680eb696"],
-Cell[CellGroupData[{
-Cell[101285, 2167, 644, 14, 73, "Input",ExpressionUUID->"1bac49b0-83de-4653-a0e8-673312c9d160"],
-Cell[101932, 2183, 3195, 120, 70, "Output",ExpressionUUID->"03665931-22c8-45e9-903f-80b853c0fd1a"]
+Cell[142260, 3208, 219, 3, 49, "Input",ExpressionUUID->"b77bbef5-c93f-4108-baf9-fa6d930f2bb4"],
+Cell[142482, 3213, 316, 5, 52, "Output",ExpressionUUID->"414381f5-aef8-4a2f-851e-950f13c8c632"]
 }, Open  ]]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[105176, 2309, 226, 3, 38, "Subsection",ExpressionUUID->"285ac0c6-ce38-4993-8133-5403d6ffda6f"],
-Cell[105405, 2314, 470, 7, 36, "Text",ExpressionUUID->"bd70a5a8-bb22-4f5e-a8f9-30c7aab938e0"],
-Cell[105878, 2323, 713, 20, 73, "Input",ExpressionUUID->"11c2193f-2087-4cf7-aca5-86761bde284f"],
-Cell[106594, 2345, 367, 9, 59, "Text",ExpressionUUID->"1a14b4b3-ac84-47d2-836f-a8689a66e01f"],
+Cell[142847, 3224, 331, 7, 65, "Subsection",ExpressionUUID->"1fe66896-c816-474b-a84b-ee18f42a2062"],
+Cell[143181, 3233, 633, 11, 83, "Text",ExpressionUUID->"642949a1-790f-4940-8841-08c9b5a355c7"],
 Cell[CellGroupData[{
-Cell[106986, 2358, 219, 3, 49, "Input",ExpressionUUID->"b77bbef5-c93f-4108-baf9-fa6d930f2bb4"],
-Cell[107208, 2363, 316, 5, 70, "Output",ExpressionUUID->"414381f5-aef8-4a2f-851e-950f13c8c632"]
-}, Open  ]]
+Cell[143839, 3248, 1892, 52, 297, "Input",ExpressionUUID->"8b892cc7-087d-4f0f-b543-e9fcb3957d29"],
+Cell[145734, 3302, 367, 6, 70, "Output",ExpressionUUID->"e0ef0707-81af-4126-b5b7-e5f081bef7bb"]
+}, Open  ]],
+Cell[146116, 3311, 160, 3, 41, "CodeText",ExpressionUUID->"49d87ce7-5f50-47aa-af0a-17ea72e9c3ac"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[107573, 2374, 331, 7, 65, "Subsection",ExpressionUUID->"1fe66896-c816-474b-a84b-ee18f42a2062"],
-Cell[107907, 2383, 633, 11, 83, "Text",ExpressionUUID->"642949a1-790f-4940-8841-08c9b5a355c7"],
+Cell[146313, 3319, 375, 8, 65, "Subsection",ExpressionUUID->"675530c0-7891-45fe-a108-0b2cab20f637"],
+Cell[146691, 3329, 576, 10, 83, "Text",ExpressionUUID->"33174136-fb73-4784-9ba8-a354f3792af1"],
 Cell[CellGroupData[{
-Cell[108565, 2398, 1892, 52, 297, "Input",ExpressionUUID->"8b892cc7-087d-4f0f-b543-e9fcb3957d29"],
-Cell[110460, 2452, 367, 6, 70, "Output",ExpressionUUID->"e0ef0707-81af-4126-b5b7-e5f081bef7bb"]
+Cell[147292, 3343, 5817, 149, 708, "Input",ExpressionUUID->"1d3aefdf-bf16-4512-b955-ba488924baac"],
+Cell[153112, 3494, 14136, 325, 204, "Output",ExpressionUUID->"8d5e9cc6-8494-4734-a12c-6bdeea0aafa6"],
+Cell[167251, 3821, 16526, 361, 241, "Output",ExpressionUUID->"2211c3d6-d874-4749-a2c9-bcfb7fc51373"]
 }, Open  ]],
-Cell[110842, 2461, 160, 3, 41, "CodeText",ExpressionUUID->"49d87ce7-5f50-47aa-af0a-17ea72e9c3ac"]
+Cell[183792, 4185, 171, 2, 32, "Input",ExpressionUUID->"f749ff05-9a37-4c7e-b26f-5569a4d0b64b"]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[111039, 2469, 375, 8, 65, "Subsection",ExpressionUUID->"675530c0-7891-45fe-a108-0b2cab20f637"],
-Cell[111417, 2479, 576, 10, 83, "Text",ExpressionUUID->"33174136-fb73-4784-9ba8-a354f3792af1"],
+Cell[184000, 4192, 430, 8, 65, "Subsection",ExpressionUUID->"b8d00377-161e-4337-b6b6-6c9030ea147d"],
+Cell[184433, 4202, 765, 13, 129, "Text",ExpressionUUID->"9cd4bd1a-b107-4ccc-978b-cc4acb4df335"],
+Cell[185201, 4217, 6263, 123, 693, "Input",ExpressionUUID->"22bc82ba-af66-42bb-9d8a-b189f5da4d08"],
+Cell[191467, 4342, 536, 10, 59, "Text",ExpressionUUID->"e6bd90b5-101a-48b0-bdde-69cbc153cafb"],
 Cell[CellGroupData[{
-Cell[112018, 2493, 5817, 149, 708, "Input",ExpressionUUID->"1d3aefdf-bf16-4512-b955-ba488924baac"],
-Cell[117838, 2644, 14136, 325, 204, "Output",ExpressionUUID->"8d5e9cc6-8494-4734-a12c-6bdeea0aafa6"],
-Cell[131977, 2971, 16526, 361, 241, "Output",ExpressionUUID->"2211c3d6-d874-4749-a2c9-bcfb7fc51373"]
-}, Open  ]],
-Cell[148518, 3335, 171, 2, 32, "Input",ExpressionUUID->"f749ff05-9a37-4c7e-b26f-5569a4d0b64b"]
-}, Closed]],
-Cell[CellGroupData[{
-Cell[148726, 3342, 430, 8, 65, "Subsection",ExpressionUUID->"b8d00377-161e-4337-b6b6-6c9030ea147d"],
-Cell[149159, 3352, 765, 13, 129, "Text",ExpressionUUID->"9cd4bd1a-b107-4ccc-978b-cc4acb4df335"],
-Cell[149927, 3367, 6263, 123, 693, "Input",ExpressionUUID->"22bc82ba-af66-42bb-9d8a-b189f5da4d08"],
-Cell[156193, 3492, 536, 10, 59, "Text",ExpressionUUID->"e6bd90b5-101a-48b0-bdde-69cbc153cafb"],
-Cell[CellGroupData[{
-Cell[156754, 3506, 608, 10, 118, "Input",ExpressionUUID->"9326f9e4-21a0-4da5-a6e0-5f19a7161dbf"],
-Cell[157365, 3518, 1296, 18, 36, "Output",ExpressionUUID->"4323e464-15e5-4747-beab-f149c7b48f45"],
-Cell[158664, 3538, 1313, 18, 36, "Output",ExpressionUUID->"6c9b9f54-b050-4c85-ab59-595591d19fa7"],
-Cell[159980, 3558, 1303, 18, 36, "Output",ExpressionUUID->"e45cd7f0-61f2-4e68-84c8-0dccda38530e"],
-Cell[161286, 3578, 1314, 18, 36, "Output",ExpressionUUID->"19650ffd-b8c0-4600-bfda-50d3a2fd06c3"]
+Cell[192028, 4356, 608, 10, 118, "Input",ExpressionUUID->"9326f9e4-21a0-4da5-a6e0-5f19a7161dbf"],
+Cell[192639, 4368, 1296, 18, 36, "Output",ExpressionUUID->"4323e464-15e5-4747-beab-f149c7b48f45"],
+Cell[193938, 4388, 1313, 18, 36, "Output",ExpressionUUID->"6c9b9f54-b050-4c85-ab59-595591d19fa7"],
+Cell[195254, 4408, 1303, 18, 36, "Output",ExpressionUUID->"e45cd7f0-61f2-4e68-84c8-0dccda38530e"],
+Cell[196560, 4428, 1314, 18, 36, "Output",ExpressionUUID->"19650ffd-b8c0-4600-bfda-50d3a2fd06c3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[162637, 3601, 251, 4, 32, "Input",ExpressionUUID->"12065d94-0d89-4f0b-88ad-2ed953feab13"],
-Cell[162891, 3607, 176, 2, 36, "Output",ExpressionUUID->"6bb506ac-bf73-4199-98bd-b667a1927cdc"]
+Cell[197911, 4451, 251, 4, 32, "Input",ExpressionUUID->"12065d94-0d89-4f0b-88ad-2ed953feab13"],
+Cell[198165, 4457, 176, 2, 36, "Output",ExpressionUUID->"6bb506ac-bf73-4199-98bd-b667a1927cdc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[163104, 3614, 211, 3, 32, "Input",ExpressionUUID->"8868978b-01ed-4ee8-a804-95b80861bf2f"],
-Cell[163318, 3619, 364, 7, 36, "Output",ExpressionUUID->"a0c3269a-1182-40b0-af7d-0a62d9c19952"]
+Cell[198378, 4464, 211, 3, 32, "Input",ExpressionUUID->"8868978b-01ed-4ee8-a804-95b80861bf2f"],
+Cell[198592, 4469, 364, 7, 36, "Output",ExpressionUUID->"a0c3269a-1182-40b0-af7d-0a62d9c19952"]
 }, Open  ]],
-Cell[163697, 3629, 581, 10, 153, "Text",ExpressionUUID->"e32dc424-d562-4856-ab6f-c34b4e7462a7"],
-Cell[164281, 3641, 2143, 48, 220, "Input",ExpressionUUID->"8a4a85a7-2545-4301-85f8-e7f8b019afe8"],
-Cell[166427, 3691, 299, 6, 59, "Text",ExpressionUUID->"6b9dec6e-2421-4a88-9e48-48e2c2f6509f"],
+Cell[198971, 4479, 581, 10, 153, "Text",ExpressionUUID->"e32dc424-d562-4856-ab6f-c34b4e7462a7"],
+Cell[199555, 4491, 2143, 48, 220, "Input",ExpressionUUID->"8a4a85a7-2545-4301-85f8-e7f8b019afe8"],
+Cell[201701, 4541, 299, 6, 59, "Text",ExpressionUUID->"6b9dec6e-2421-4a88-9e48-48e2c2f6509f"],
 Cell[CellGroupData[{
-Cell[166751, 3701, 905, 21, 57, "Input",ExpressionUUID->"582fe28b-a3ad-4c69-ad91-acd55a361e00"],
-Cell[167659, 3724, 881, 26, 91, "Output",ExpressionUUID->"6ec574d1-fad1-4fd8-b00a-1643dbcec3bb"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[168577, 3755, 543, 16, 32, "Input",ExpressionUUID->"5cabb67a-cbc7-4962-94ee-a3f8bbc515da"],
-Cell[169123, 3773, 1551, 59, 60, "Output",ExpressionUUID->"bed9c81a-3f39-4950-be04-cde8ace74497"]
+Cell[202025, 4551, 905, 21, 57, "Input",ExpressionUUID->"582fe28b-a3ad-4c69-ad91-acd55a361e00"],
+Cell[202933, 4574, 881, 26, 91, "Output",ExpressionUUID->"6ec574d1-fad1-4fd8-b00a-1643dbcec3bb"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[170711, 3837, 533, 14, 60, "Input",ExpressionUUID->"2266507d-2a79-402e-9adc-0baef461e625"],
-Cell[171247, 3853, 1612, 61, 168, "Output",ExpressionUUID->"25009fd2-39bc-4297-9966-849bd9a25e7b"]
+Cell[203851, 4605, 543, 16, 32, "Input",ExpressionUUID->"5cabb67a-cbc7-4962-94ee-a3f8bbc515da"],
+Cell[204397, 4623, 1551, 59, 60, "Output",ExpressionUUID->"bed9c81a-3f39-4950-be04-cde8ace74497"]
 }, Open  ]],
-Cell[172874, 3917, 686, 13, 61, "Text",ExpressionUUID->"2593570b-1035-464a-92b4-022acabc53a6"]
+Cell[CellGroupData[{
+Cell[205985, 4687, 533, 14, 60, "Input",ExpressionUUID->"2266507d-2a79-402e-9adc-0baef461e625"],
+Cell[206521, 4703, 1612, 61, 168, "Output",ExpressionUUID->"25009fd2-39bc-4297-9966-849bd9a25e7b"]
+}, Open  ]],
+Cell[208148, 4767, 686, 13, 61, "Text",ExpressionUUID->"2593570b-1035-464a-92b4-022acabc53a6"]
 }, Closed]]
 }, Closed]]
 }, Open  ]]
